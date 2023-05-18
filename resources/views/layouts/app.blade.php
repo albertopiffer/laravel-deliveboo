@@ -21,11 +21,12 @@
 
 <body>
     <div id="app">
-        @yield('header')
+        @include('partials.header')
         <main class="">
             @yield('content')
         </main>
     </div>
 </body>
+@include('partials.footer')
 
 </html>
