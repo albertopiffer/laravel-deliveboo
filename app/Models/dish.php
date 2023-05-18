@@ -14,4 +14,8 @@ class dish extends Model
         return $this->belongsToMany(Order::class);
     }
 
+    public function restaurants(){
+        return $this->hasmany(Restaurant::class);
+    }
+
 }
