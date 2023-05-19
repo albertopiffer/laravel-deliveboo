@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
 
-            RestaurantSeeder::class,
-            DishSeeder::class,
-            // OrderSeeder::class,
             TypologySeeder::class,
+            RestaurantSeeder::class,
+            // DishSeeder::class,
+            // OrderSeeder::class,
         ]);
     }
 }
