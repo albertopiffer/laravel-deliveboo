@@ -13,8 +13,8 @@ class Restaurant extends Model
         return $this->belongsToMany(Typology::class);
     }
 
-    public function dish(){
-        return $this->belongsTo(Dish::class);
+    public function dishes(){
+        return $this->hasmany(Dish::class);
     }
 
     public function user(){
