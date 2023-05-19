@@ -27,7 +27,7 @@ class DishSeeder extends Seeder
                 "visible" => true,
                 "price" => 8.99,
                 "thumbnail" => "https://www.example.com/images/taco-al-pastor.jpg",
-                //"restaurant_id" => 1,
+                "restaurant_id" => 1,
             ],
         ];
 
@@ -41,7 +41,7 @@ class DishSeeder extends Seeder
             $newdish->price = $dish['price'];
             $newdish->thumbnail = $dish['thumbnail'];
 
-            //$newdish->restaurant_id = $dish['restaurant_id'];
+            $newdish->restaurant_id = $dish['restaurant_id'];
 
             $newdish->save();
         }
