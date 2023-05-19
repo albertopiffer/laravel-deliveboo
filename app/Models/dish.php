@@ -9,4 +9,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class dish extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function orders(){
+        return $this->belongsToMany(Order::class);
+    }
+
+    public function restaurants(){
+        return $this->hasmany(Restaurant::class);
+    }
+
 }
