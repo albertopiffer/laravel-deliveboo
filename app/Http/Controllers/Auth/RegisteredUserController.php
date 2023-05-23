@@ -14,6 +14,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 use App\Models\Restaurant;
+use App\Models\Typology;
 
 class RegisteredUserController extends Controller
 {
@@ -22,7 +23,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $typologies = Typology::orderBy('name')->get();
+        return view('auth.register', compact('typologies'));
     }
 
     /**
@@ -57,6 +59,9 @@ class RegisteredUserController extends Controller
 
             'user_id' => $user->id,
         ]);
+        if (isset($request['typologies'])) {
+            $restaurant->typologies()->attach($request['typologies']);
+        }
 
         event(new Registered($user));
 
