@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\dish;
+use App\Models\Restaurant;
+
+use Illuminate\Http\Request;
 use App\Http\Requests\StoredishRequest;
 use App\Http\Requests\UpdatedishRequest;
 
