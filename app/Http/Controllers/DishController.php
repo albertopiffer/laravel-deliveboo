@@ -30,7 +30,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view ('dishes.create');
     }
 
     /**
@@ -41,7 +41,10 @@ class DishController extends Controller
      */
     public function store(StoredishRequest $request)
     {
-        //
+        $data = $request->validated();
+        $dish = Dish::create($data);
+
+        return to_route('dishes.show',$dish);
     }
 
     /**
