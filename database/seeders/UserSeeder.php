@@ -26,6 +26,8 @@ class UserSeeder extends Seeder
             'name' => 'testuser',
             'email' => 'testuser@example.com',
             'password' => Hash::make('tuEhVgq6a85AW'),
+
+            'p_iva' => '12345678900'
         ]);
 
         for ($i = 0; $i < 100; $i++) {
@@ -33,11 +35,14 @@ class UserSeeder extends Seeder
             $lastName = $faker->lastName;
             $email = strtolower($firstName) . '.' . strtolower($lastName) . '@example.com';
             $password = Hash::make('testpassword');
+            $partitaIVA = $faker->unique()->numerify('###########');
 
             User::create([
                 'name' => $firstName . ' ' . $lastName,
                 'email' => $email,
                 'password' => $password,
+
+                'p_iva' => $partitaIVA,
             ]);
         }
     }

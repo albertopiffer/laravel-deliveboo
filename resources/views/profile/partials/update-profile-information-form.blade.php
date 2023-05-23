@@ -59,6 +59,16 @@
             @endif
         </div>
 
+        <div class="mb-2">
+            <label for="p_iva">{{__('Partita Iva')}}</label>
+            <input class="form-control" type="text" name="p_iva" id="p_iva" autocomplete="p_iva" value="{{old('p_iva', $user->p_iva)}}" required autofocus>
+            @error('p_iva')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->get('p_iva')}}</strong>
+            </span>
+            @enderror
+        </div>
+
         <div class="d-flex align-items-center gap-4">
             <button class="btn btn-primary" type="submit">{{ __('Save') }}</button>
 

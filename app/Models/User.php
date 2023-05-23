@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'p_iva',
     ];
 
     /**
@@ -42,7 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function restaurant(){
+    public function restaurant()
+    {
         return $this->hasOne(Restaurant::class);
     }
 }

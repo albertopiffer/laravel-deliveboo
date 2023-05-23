@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
+use App\Models\Restaurant;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -30,16 +32,30 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
+            'p_iva' => ['required', 'string', 'max:11', 'unique:' . User::class],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+
+            'p_iva' => $request['p_iva'],
+        ]);
+
+        $restaurant = Restaurant::create([
+            'restaurant_name' => $request['restaurant_name'], // 'restaurant_name' is the name of the input in the form 'register.blade.php
+            'address' => $request['address'],
+            'description' => $request['description'],
+            'thumbnail' => $request['thumbnail'],
+
+            'user_id' => $user->id,
         ]);
 
         event(new Registered($user));
