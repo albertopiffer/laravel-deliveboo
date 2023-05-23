@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class dish extends Model
 {
-    use HasFactory; //, SoftDeletes va in conflitto con INDEX
+    use HasFactory, SoftDeletes; // va in conflitto con INDEX
 
     public function orders(){
         return $this->belongsToMany(Order::class);

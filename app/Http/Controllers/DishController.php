@@ -18,7 +18,7 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
+        $dishes = Dish::withTrashed()->get();
 
         return view('dishes.index', compact('dishes'));
     }
@@ -86,6 +86,8 @@ class DishController extends Controller
      */
     public function destroy(dish $dish)
     {
-        //
+        $dish->delete();
+
+        return to_route('dishes.index');
     }
 }
