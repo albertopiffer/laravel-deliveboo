@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dish;
-use App\Models\Restaurant;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\StoredishRequest;
 use App\Http\Requests\UpdatedishRequest;
+use App\Models\dish;
+use App\Models\Restaurant;
+
 
 class DishController extends Controller
 {
@@ -18,7 +18,9 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $dishes = Dish::all();
+
+        return view('dishes.index', compact('dishes'));
     }
 
     /**
@@ -50,7 +52,7 @@ class DishController extends Controller
      */
     public function show(dish $dish)
     {
-        //
+        return view('dishes.show',compact('dish'));
     }
 
     /**
