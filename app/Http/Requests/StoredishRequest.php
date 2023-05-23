@@ -13,7 +13,7 @@ class StoredishRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoredishRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=> 'unique:dishes,name', //bisogna inserire la required, ma dava errore
+            'description'=>'string',
+            'tipology' => 'string',
+            'visible'=>'boolean',
+            'price'=>'numeric', //bisogna cambiarlo con decimal, ma dava errore
+            'thumbnail'=>'url',
         ];
     }
 }

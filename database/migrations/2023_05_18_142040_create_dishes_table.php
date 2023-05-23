@@ -23,6 +23,7 @@ return new class extends Migration
             $table->decimal('price', 4, 2);
             $table->string('thumbnail')->nullable();
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

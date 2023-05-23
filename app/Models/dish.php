@@ -10,6 +10,15 @@ class dish extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable=[
+        'name',
+        'description',
+        'tipology',
+        'visible',
+        'price',
+        'thumbnail'
+    ];
+
     public function orders(){
         return $this->belongsToMany(Order::class);
     }

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dish;
-use App\Models\Restaurant;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\StoredishRequest;
 use App\Http\Requests\UpdatedishRequest;
+use App\Models\dish;
+use App\Models\Restaurant;
+
 
 class DishController extends Controller
 {
@@ -18,7 +18,9 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $dishes = Dish::withTrashed()->get();
+
+        return view('dishes.index', compact('dishes'));
     }
 
     /**
@@ -28,7 +30,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view ('dishes.create');
     }
 
     /**
@@ -39,7 +41,10 @@ class DishController extends Controller
      */
     public function store(StoredishRequest $request)
     {
-        //
+        $data = $request->validated();
+        $dish = Dish::create($data);
+
+        return to_route('dishes.show',$dish);
     }
 
     /**
@@ -50,7 +55,7 @@ class DishController extends Controller
      */
     public function show(dish $dish)
     {
-        //
+        return view('dishes.show',compact('dish'));
     }
 
     /**
@@ -84,6 +89,8 @@ class DishController extends Controller
      */
     public function destroy(dish $dish)
     {
-        //
+        $dish->delete();
+
+        return to_route('dishes.index');
     }
 }
