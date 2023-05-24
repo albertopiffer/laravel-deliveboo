@@ -69,7 +69,7 @@ class DishController extends Controller
      */
     public function edit(dish $dish)
     {
-        //
+        return view ('dishes.edit', compact('dish'));
     }
 
     /**
@@ -81,7 +81,10 @@ class DishController extends Controller
      */
     public function update(UpdatedishRequest $request, dish $dish)
     {
-        //
+        $data = $request->validated();
+        $dish->update($data);
+
+        return to_route('dishes.show',$dish);
     }
 
     /**
@@ -92,7 +95,13 @@ class DishController extends Controller
      */
     public function destroy(dish $dish)
     {
-        $dish->delete();
+        //$dish->delete();
+
+        if($dish->trashed()){
+            $dish->forceDelete();
+        }else{
+            $dish->delete();
+        }
 
         return to_route('dishes.index');
     }
