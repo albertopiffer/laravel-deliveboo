@@ -54,7 +54,7 @@ class DishPolicy
      */
     public function update(User $user, dish $dish)
     {
-        return $user->id === $dish->user_id;
+        return $user->id === $dish->restaurant_id;
     }
 
     /**
@@ -66,7 +66,7 @@ class DishPolicy
      */
     public function delete(User $user, dish $dish)
     {
-        return $user->id === $dish->user_id;
+        return $user->id === $dish->restaurant_id;
     }
 
     /**
