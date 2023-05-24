@@ -7,6 +7,7 @@ use App\Http\Requests\StoredishRequest;
 use App\Http\Requests\UpdatedishRequest;
 use App\Models\dish;
 use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 
 
 class DishController extends Controller
@@ -19,7 +20,9 @@ class DishController extends Controller
     public function index()
     {
         $dishes = Dish::withTrashed()->get();
+        $restaurant_id = Auth::id(); //recuperare id utente
 
+        $dishes = dish::where('restaurant_id', $restaurant_id)->get();
         return view('dishes.index', compact('dishes'));
     }
 
@@ -30,7 +33,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view ('dishes.create');
+        return view('dishes.create');
     }
 
     /**
@@ -42,9 +45,9 @@ class DishController extends Controller
     public function store(StoredishRequest $request)
     {
         $data = $request->validated();
-        $dish = Dish::create($data);
-
-        return to_route('dishes.show',$dish);
+        $data['restaurant_id'] = Auth::id();
+        $dish = dish::create($data);
+        return to_route('dishes.show', $dish);
     }
 
     /**
@@ -55,7 +58,7 @@ class DishController extends Controller
      */
     public function show(dish $dish)
     {
-        return view('dishes.show',compact('dish'));
+        return view('dishes.show', compact('dish'));
     }
 
     /**

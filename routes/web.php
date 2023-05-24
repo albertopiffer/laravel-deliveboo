@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DishController;
+use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('dishes', DishController::class);
-
+    Route::resource('restaurants', RestaurantController::class);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

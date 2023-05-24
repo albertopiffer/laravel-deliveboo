@@ -16,7 +16,8 @@ class dish extends Model
         'tipology',
         'visible',
         'price',
-        'thumbnail'
+        'thumbnail',
+        'restaurant_id',
     ];
 
     public function orders()

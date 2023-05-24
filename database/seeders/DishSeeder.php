@@ -9,6 +9,7 @@ use App\Models\dish;
 use App\Models\order;
 use App\Models\Restaurant;
 
+
 class DishSeeder extends Seeder
 {
     /**
@@ -18,7 +19,7 @@ class DishSeeder extends Seeder
      */
     public function run()
     {
-
+        $restaurant_id = Restaurant::all()->pluck('id')->all();
         $dishes = [
             [
                 "name" => "Enchiladas Verdes",
