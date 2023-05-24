@@ -20,13 +20,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dishes.create') }}">{{ __('Create') }}</a>
-                        </li>
                         @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dishes.create') }}">{{ __('Create') }}</a>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
                             </li>
