@@ -45,6 +45,8 @@ class DishController extends Controller
     public function store(StoredishRequest $request)
     {
         $data = $request->validated();
+        $data['visible'] = 1;
+
         $data['restaurant_id'] = Auth::id();
         if ($request->hasFile('thumbnail')) {
             $cover_path = Storage::put('uploads', $data['thumbnail']);
@@ -91,6 +93,7 @@ class DishController extends Controller
         $this->authorize('update', $dish);
 
         $data = $request->validated();
+
         if ($request->hasFile('thumbnail')) {
             $cover_path = Storage::put('uploads', $data['thumbnail']);
             $data['cover_image'] = $cover_path;
@@ -99,6 +102,7 @@ class DishController extends Controller
                 Storage::delete($dish->cover_image);
             }
         }
+
         $dish->update($data);
 
         return to_route('dishes.show', $dish);
