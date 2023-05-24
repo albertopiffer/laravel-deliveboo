@@ -92,7 +92,13 @@ class DishController extends Controller
      */
     public function destroy(dish $dish)
     {
-        $dish->delete();
+        //$dish->delete();
+
+        if($dish->trashed()){
+            $dish->forceDelete();
+        }else{
+            $dish->delete();
+        }
 
         return to_route('dishes.index');
     }
