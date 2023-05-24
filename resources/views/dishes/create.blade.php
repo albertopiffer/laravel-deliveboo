@@ -37,17 +37,19 @@
                         {{$message}}
                     </div>
                 @enderror
-            </div>        
+            </div>
 
             <div class="mb-3">
                 <label for="visible" class="form-label">Disponibilità</label>
-                <input type="text" name="visible" class="form-control  @error('visible') is-invalid @enderror" id="visible" aria-describedby="visibleHelp" value="{{ old('visible')}}">
+                <input type="checkbox" name="visible" class="form-control @error('visible') is-invalid @enderror" id="visible" aria-describedby="visibleHelp" value="1" @if(old('visible')) checked @endif
+                style="appearance: auto; -webkit-appearance: checkbox; -moz-appearance: checkbox;">
                 @error('visible')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>
                 @enderror
-            </div>        
+            </div>
+            
 
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
@@ -67,7 +69,7 @@
                         {{$message}}
                     </div>
                 @enderror
-            </div>        
+            </div>
 
             <button type="submit" class="btn btn-primary">Aggiungi piatto</button>
         </form>
