@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdatedishRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdatedishRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,12 @@ class UpdatedishRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required','string',Rule::unique('dishes','name')],
+            'description' => 'nullable|string',
+            'tipology' => 'required|string',
+            'visible' => 'nullable|boolean',
+            'price' => ['required', 'regex:/^\d{1,4}(\.\d{1,2})?$/'],   //decimal non è supportato da laravel
+            'thumbnail' => 'nullable|url',
         ];
     }
 }
