@@ -62,6 +62,9 @@ class DishController extends Controller
      */
     public function show(dish $dish)
     {
+        //$this->authorize('view', $dish);
+        //Se desidero oscurare anche la vista show del piatto riabilito la riga sopra ed riabilito la riga nella sezione view nel file DishPolicy
+
         return view('dishes.show', compact('dish'));
     }
 
@@ -85,6 +88,8 @@ class DishController extends Controller
      */
     public function update(UpdatedishRequest $request, dish $dish)
     {
+        $this->authorize('update', $dish);
+
         $data = $request->validated();
         if ($request->hasFile('thumbnail')) {
             $cover_path = Storage::put('uploads', $data['thumbnail']);
@@ -107,7 +112,7 @@ class DishController extends Controller
      */
     public function destroy(dish $dish)
     {
-        //$dish->delete();
+        $this->authorize('delete', $dish);
 
         if ($dish->trashed()) {
             $dish->forceDelete();
