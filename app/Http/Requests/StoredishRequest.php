@@ -24,12 +24,12 @@ class StoredishRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'unique:dishes,name', //bisogna inserire la required, ma dava errore
-            'description'=>'string',
-            'tipology' => 'string',
-            'visible'=>'boolean',
-            'price'=>'numeric', //bisogna cambiarlo con decimal, ma dava errore
-            'thumbnail'=>'url',
+            'name' => 'required|string|unique:dishes,name',
+            'description' => 'nullable|string',
+            'tipology' => 'required|string',
+            'visible' => 'nullable|boolean',
+            'price' => ['required', 'regex:/^\d{1,4}(\.\d{1,2})?$/'],   //decimal non è supportato da laravel
+            'thumbnail' => 'nullable|url',
         ];
     }
 }
