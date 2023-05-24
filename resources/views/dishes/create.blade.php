@@ -4,7 +4,7 @@
         <div>Aggiugi Piatto</div>
     </div>
 
-    <div>
+    <div class="container">
         <form action="{{ route('dishes.store') }}" method="POST" enctype="multipart/form-data">
 
             @csrf

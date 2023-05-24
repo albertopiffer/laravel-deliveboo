@@ -15,9 +15,8 @@
                     <h3 class="card-title">{{ $dish->name }}</h3>
                     <h6 class="m-auto">TIPOLOGIA</h6>
                 </div>
-                <p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</small></p>
-                <h4 class="card-text text-success">€14,99</h4>
+                <p class="card-text">{{ $dish->description }}</p>
+                <h4 class="card-text text-success">€ {{ $dish->price }}</h4>
                 <div class="pt-2 d-flex">
                     <a class="btn btn-warning me-2 ps-3 pe-3" href="{{ route('dishes.edit', $dish) }}">EDIT</a>
                     <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
