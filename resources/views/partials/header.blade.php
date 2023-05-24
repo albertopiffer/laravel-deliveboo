@@ -1,5 +1,5 @@
     <header>
-        <nav class="navbar navbar-expand-md nav-style">
+        <nav class="navbar navbar-expand-md nav-style navbar-light" style="background-color: #FF7659;">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
@@ -18,11 +18,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                            <a class=" nav-pills" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
+                                <a class="nav-pills" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
                             </li>
                         @endauth
                     </ul>
@@ -32,11 +32,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class=" nav-pills" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                    <a class=" nav-pills" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                 </li>
                             @endif
                         @else
@@ -47,8 +47,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
-                                    <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
+                                    <a class="dropdown-item " href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                                    <a class="dropdown-item " href="{{ url('profile') }}">{{ __('Profile')}}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -68,8 +68,36 @@
     </header>
 
     <style>
-        .nav-style {
-            background-color: rgb(91, 73, 255);
 
-        }
+
+.nav-pills{
+    background-color: white;
+    border-radius: 999px;
+    margin: 10px ;
+    padding: 13px 35px;
+    font-size: 15px;
+    color: grey;
+    
+
+}
+
+.nav-pills:hover{
+    background-color: white;
+    opacity: 0.9;
+}
+
+@media (max-width: 770px) {
+    .nav-pills{
+    background-color: transparent;
+    padding: 0;
+        color: black;
+    
+    
+    }
+    .nav-pills:hover{
+        background-color: transparent;
+
+    }
+  }
+        
     </style>
