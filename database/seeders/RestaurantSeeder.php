@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Restaurant;
+use App\Models\User;
 
 class RestaurantSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class RestaurantSeeder extends Seeder
      */
     public function run()
     {
+        $user_id = User::all()->pluck('id')->all();
         $restaurants = [
             [
                 "restaurant_name" => "El Pipito",
@@ -265,6 +267,7 @@ class RestaurantSeeder extends Seeder
             $newrestaurant->address = $restaurant['address'];
             $newrestaurant->description = $restaurant['description'];
             $newrestaurant->thumbnail = $restaurant['thumbnail'];
+
 
             if (isset($restaurant['user_id'])) {
                 $newrestaurant->user_id = $restaurant['user_id'];

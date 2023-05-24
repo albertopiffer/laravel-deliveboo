@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,7 +17,9 @@ class dish extends Model
         'tipology',
         'visible',
         'price',
-        'thumbnail'
+        'thumbnail',
+        'restaurant_id',
+        'cover_image'
     ];
 
     public function orders()
@@ -28,4 +31,13 @@ class dish extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+    protected function coverPath(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value, $attributes) {
+                return asset('storage/' . $attributes['cover_image']);
+            }
+        );
+    }
+    protected $appends = ['cover_path'];
 }

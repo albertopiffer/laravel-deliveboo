@@ -7,7 +7,8 @@ use App\Http\Requests\StoredishRequest;
 use App\Http\Requests\UpdatedishRequest;
 use App\Models\dish;
 use App\Models\Restaurant;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -19,7 +20,9 @@ class DishController extends Controller
     public function index()
     {
         $dishes = Dish::withTrashed()->get();
+        $restaurant_id = Auth::id(); //recuperare id utente
 
+        $dishes = dish::where('restaurant_id', $restaurant_id)->get();
         return view('dishes.index', compact('dishes'));
     }
 
@@ -30,7 +33,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view ('dishes.create');
+        return view('dishes.create');
     }
 
     /**
@@ -42,9 +45,13 @@ class DishController extends Controller
     public function store(StoredishRequest $request)
     {
         $data = $request->validated();
-        $dish = Dish::create($data);
-
-        return to_route('dishes.show',$dish);
+        $data['restaurant_id'] = Auth::id();
+        if ($request->hasFile('thumbnail')) {
+            $cover_path = Storage::put('uploads', $data['thumbnail']);
+            $data['cover_image'] = $cover_path;
+        }
+        $dish = dish::create($data);
+        return to_route('dishes.show', $dish);
     }
 
     /**
@@ -55,7 +62,10 @@ class DishController extends Controller
      */
     public function show(dish $dish)
     {
-        return view('dishes.show',compact('dish'));
+        //$this->authorize('view', $dish);
+        //Se desidero oscurare anche la vista show del piatto riabilito la riga sopra ed riabilito la riga nella sezione view nel file DishPolicy
+
+        return view('dishes.show', compact('dish'));
     }
 
     /**
@@ -66,7 +76,7 @@ class DishController extends Controller
      */
     public function edit(dish $dish)
     {
-        //
+        return view('dishes.edit', compact('dish'));
     }
 
     /**
@@ -78,7 +88,20 @@ class DishController extends Controller
      */
     public function update(UpdatedishRequest $request, dish $dish)
     {
-        //
+        $this->authorize('update', $dish);
+
+        $data = $request->validated();
+        if ($request->hasFile('thumbnail')) {
+            $cover_path = Storage::put('uploads', $data['thumbnail']);
+            $data['cover_image'] = $cover_path;
+
+            if ($dish->cover_image && Storage::exists($dish->cover_image)) {
+                Storage::delete($dish->cover_image);
+            }
+        }
+        $dish->update($data);
+
+        return to_route('dishes.show', $dish);
     }
 
     /**
@@ -89,7 +112,13 @@ class DishController extends Controller
      */
     public function destroy(dish $dish)
     {
-        $dish->delete();
+        $this->authorize('delete', $dish);
+
+        if ($dish->trashed()) {
+            $dish->forceDelete();
+        } else {
+            $dish->delete();
+        }
 
         return to_route('dishes.index');
     }

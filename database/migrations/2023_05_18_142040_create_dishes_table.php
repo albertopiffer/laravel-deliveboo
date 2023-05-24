@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('tipology')->nullable();
-            $table->boolean('visible');
+            $table->boolean('visible')->default(0);
             $table->decimal('price', 4, 2);
             $table->string('thumbnail')->nullable();
 

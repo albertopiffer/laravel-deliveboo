@@ -22,7 +22,10 @@
                         </li>
                         @auth
                             <li class="nav-item">
+
                                 <a class="nav-pills" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
+
+                                <a class="nav-link" href="{{ route('dishes.create') }}">{{ __('Create') }}</a>
                             </li>
                         @endauth
                     </ul>
