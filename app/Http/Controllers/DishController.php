@@ -8,7 +8,7 @@ use App\Http\Requests\UpdatedishRequest;
 use App\Models\dish;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -46,6 +46,10 @@ class DishController extends Controller
     {
         $data = $request->validated();
         $data['restaurant_id'] = Auth::id();
+        if ($request->hasFile('thumbnail')) {
+            $cover_path = Storage::put('uploads', $data['thumbnail']);
+            $data['cover_image'] = $cover_path;
+        }
         $dish = dish::create($data);
         return to_route('dishes.show', $dish);
     }
@@ -69,7 +73,7 @@ class DishController extends Controller
      */
     public function edit(dish $dish)
     {
-        return view ('dishes.edit', compact('dish'));
+        return view('dishes.edit', compact('dish'));
     }
 
     /**
@@ -82,9 +86,17 @@ class DishController extends Controller
     public function update(UpdatedishRequest $request, dish $dish)
     {
         $data = $request->validated();
+        if ($request->hasFile('thumbnail')) {
+            $cover_path = Storage::put('uploads', $data['thumbnail']);
+            $data['cover_image'] = $cover_path;
+
+            if ($dish->cover_image && Storage::exists($dish->cover_image)) {
+                Storage::delete($dish->cover_image);
+            }
+        }
         $dish->update($data);
 
-        return to_route('dishes.show',$dish);
+        return to_route('dishes.show', $dish);
     }
 
     /**
@@ -97,9 +109,9 @@ class DishController extends Controller
     {
         //$dish->delete();
 
-        if($dish->trashed()){
+        if ($dish->trashed()) {
             $dish->forceDelete();
-        }else{
+        } else {
             $dish->delete();
         }
 

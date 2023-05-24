@@ -29,7 +29,7 @@ class StoredishRequest extends FormRequest
             'tipology' => 'required|string',
             'visible' => 'nullable|boolean',
             'price' => ['required', 'regex:/^\d{1,4}(\.\d{1,2})?$/'],   //decimal non è supportato da laravel
-            'thumbnail' => 'nullable|url',
+            'thumbnail' => 'nullable|image|max:2000',
         ];
     }
 }
