@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdatedishRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdatedishRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,12 @@ class UpdatedishRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=> [Rule::unique('dishes','name')], //bisogna inserire la required, ma dava errore
+            'description'=> 'string',
+            'tipology' => 'string',
+            'visible'=> 'boolean',
+            'price'=> 'numeric', //bisogna cambiarlo con decimal, ma dava errore
+            'thumbnail'=> 'url',
         ];
     }
 }
