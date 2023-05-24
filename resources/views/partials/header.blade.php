@@ -51,10 +51,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item " href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
-                                    <a class="dropdown-item " href="{{ url('profile') }}">{{ __('Profile')}}</a>
+                                    <a class="dropdown-item " href="{{ url('profile') }}">{{ __('Profile') }}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                                                document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -71,36 +71,34 @@
     </header>
 
     <style>
+        .nav-pills {
+            background-color: white;
+            border-radius: 999px;
+            margin: 10px;
+            padding: 13px 35px;
+            font-size: 15px;
+            color: grey;
 
 
-.nav-pills{
-    background-color: white;
-    border-radius: 999px;
-    margin: 10px ;
-    padding: 13px 35px;
-    font-size: 15px;
-    color: grey;
-    
+        }
 
-}
+        .nav-pills:hover {
+            background-color: white;
+            opacity: 0.9;
+        }
 
-.nav-pills:hover{
-    background-color: white;
-    opacity: 0.9;
-}
+        @media (max-width: 770px) {
+            .nav-pills {
+                background-color: transparent;
+                padding: 0;
+                color: black;
 
-@media (max-width: 770px) {
-    .nav-pills{
-    background-color: transparent;
-    padding: 0;
-        color: black;
-    
-    
-    }
-    .nav-pills:hover{
-        background-color: transparent;
 
-    }
-  }
-        
+            }
+
+            .nav-pills:hover {
+                background-color: transparent;
+
+            }
+        }
     </style>
