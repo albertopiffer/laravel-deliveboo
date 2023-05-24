@@ -17,15 +17,21 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <a class="text-dark fs-5" href="{{ route('dishes.show', $dish) }}">{{ $dish->name }}</a>
-                                <div class="text-dark">{{ $dish->tipology }}</div>
+                                <span class="badge rounded-pill text-bg-primary fs-6">{{ $dish->tipology }}</span>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="pink">{{ $dish->price }}$</div>
-                                <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary"><i
+                                        class="fa-solid fa-pen"></i></a>
                                 <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+                                    <div>
+                                        {{-- <i class="fa-solid fa-trash text-white"></i>
+                                        <input type="submit" class="btn btn-sm btn-danger ps-0" value="Elimina"> --}}
+                                        <button type="submit" class="btn btn-danger" title="delete"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -40,5 +46,18 @@
 @endsection
 
 <style scoped>
-    .price {}
+    .input-with-icon {
+        position: relative;
+        background-color: #dc3545;
+    }
+
+    .input-with-icon input {
+        padding-left: 30px;
+    }
+
+    .input-with-icon .fa-input {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
 </style>

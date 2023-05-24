@@ -79,7 +79,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Aggiungi piatto</button>
+            <button type="submit" class="btn btn-primary">Modifica</button>
         </form>
     </div>
 @endsection
