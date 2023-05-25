@@ -30,8 +30,7 @@ class DishPolicy
      */
     public function view(User $user, dish $dish)
     {
-        //return $user->id === $dish->user_id; 
-        //Se desidero oscurare anche la vista show del piatto riabilito la riga sopra ed riabilito la riga authorize nel file DishController
+        return $user->id === $dish->restaurant_id;
     }
 
     /**
