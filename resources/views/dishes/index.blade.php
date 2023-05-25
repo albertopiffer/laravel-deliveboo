@@ -23,7 +23,7 @@
                                 <div class="pink">{{ $dish->price }}$</div>
                                 <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary"><i
                                         class="fa-solid fa-pen"></i></a>
-                                <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
+                                <form action="{{ route('dishes.destroy', $dish) }}" method="POST" class="m-0">
                                     @csrf
                                     @method('DELETE')
                                     <div>
