@@ -4,7 +4,7 @@
 
     <h1 class="text-center">{{ $dish->name }}</h1>
     <section>
-        <div class="card mb-3 col-6 m-auto box-shadow ">
+        <div class="card mb-3 col-6 m-auto box-shadow @if ($dish->visible === 0) bg-dark text-white @endif">
             @if ($dish->cover_image)
                 <div class="container">
                     <img src="{{ $dish->cover_path }}" alt="">
