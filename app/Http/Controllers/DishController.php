@@ -64,8 +64,7 @@ class DishController extends Controller
      */
     public function show(dish $dish)
     {
-        //$this->authorize('view', $dish);
-        //Se desidero oscurare anche la vista show del piatto riabilito la riga sopra ed riabilito la riga nella sezione view nel file DishPolicy
+        $this->authorize('view', $dish);
 
         return view('dishes.show', compact('dish'));
     }
