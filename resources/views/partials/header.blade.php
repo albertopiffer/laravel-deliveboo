@@ -17,11 +17,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class=" nav-pills" href="{{ url('/') }}">{{ __('Home') }}</a>
-                        </li>
                         @auth
                             <li class="nav-item">
+                                <a class=" nav-pills"
+                                    href="{{ route('restaurants.index') }}">{{ __('Il tuo ristorante') }}</a>
 
                                 <a class="nav-pills" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
 
