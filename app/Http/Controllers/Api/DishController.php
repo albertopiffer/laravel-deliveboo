@@ -19,4 +19,21 @@ class DishController extends Controller
             'results' => $results,
         ]);
     }
+
+    public function show($id)
+    {
+        $dish = dish::find($id);
+
+        if ($dish) {
+            return response()->json([
+                'success' => true,
+                'dish' => $dish
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'Dish not found'
+            ]);
+        }
+    }
 }
