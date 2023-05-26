@@ -13,7 +13,7 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-        $results = Restaurant::all();
+        $results = Restaurant::with('typologies')->get();
         return response()->json([
             'success' => true,
             'results' => $results,
@@ -22,7 +22,7 @@ class RestaurantController extends Controller
 
     public function show($id)
     {
-        $restaurant = Restaurant::find($id);
+        $restaurant = Restaurant::with('typologies')->find($id);
 
         if ($restaurant) {
             return response()->json([
