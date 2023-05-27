@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-4 row">
@@ -175,6 +175,17 @@
                                     @endforeach
                                 </div>
                                 @error('typologies')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="thumbnail" class="form-label">IMG</label>
+                                <input type="file" name="thumbnail"
+                                    class="form-control  @error('thumbnail') is-invalid @enderror" id="thumbnail"
+                                    aria-describedby="thumbnailHelp" value="{{ old('thumbnail') }}">
+                                @error('thumbnail')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

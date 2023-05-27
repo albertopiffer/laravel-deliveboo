@@ -15,6 +15,7 @@ use Illuminate\View\View;
 
 use App\Models\Restaurant;
 use App\Models\Typology;
+use Illuminate\Support\Facades\Storage;
 
 class RegisteredUserController extends Controller
 {
@@ -51,14 +52,28 @@ class RegisteredUserController extends Controller
             'p_iva' => $request['p_iva'],
         ]);
 
-        $restaurant = Restaurant::create([
-            'restaurant_name' => $request['restaurant_name'], // 'restaurant_name' is the name of the input in the form 'register.blade.php
-            'address' => $request['address'],
-            'description' => $request['description'],
-            'thumbnail' => $request['thumbnail'],
+        // $restaurant = Restaurant::create([
+        //     'restaurant_name' => $request['restaurant_name'], // 'restaurant_name' is the name of the input in the form 'register.blade.php
+        //     'address' => $request['address'],
+        //     'description' => $request['description'],
+        //     'thumbnail' => $request['thumbnail'],
 
+        //     'user_id' => $user->id,
+        // ]);
+        $data = [
+            'restaurant_name' => $request->input('restaurant_name'),
+            'address' => $request->input('address'),
+            'description' => $request->input('description'),
             'user_id' => $user->id,
-        ]);
+        ];
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->file('thumbnail');
+            $cover_path = Storage::put('uploads', $thumbnail);
+            $data['cover_image'] = $cover_path;
+        }
+
+        $restaurant = Restaurant::create($data);
+
         if (isset($request['typologies'])) {
             $restaurant->typologies()->attach($request['typologies']);
         }
