@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('dish_order', function (Blueprint $table) {
-            $table->decimal('quantity',4 ,2);
+            $table->integer('quantityint')->unsigned();
         });
     }
 
