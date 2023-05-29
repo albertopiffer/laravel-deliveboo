@@ -24,7 +24,7 @@ class StoredishRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|unique:dishes,name',
+            'name' => 'required|string',
             'description' => 'nullable|string',
             'tipology' => 'required|string',
             'visible' => 'nullable|boolean',

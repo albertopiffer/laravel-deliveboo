@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'p_iva' => '12345678900'
         ]);
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 29; $i++) {
             $firstName = $faker->firstName;
             $lastName = $faker->lastName;
             $email = strtolower($firstName) . '.' . strtolower($lastName) . '@example.com';
