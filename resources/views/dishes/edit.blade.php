@@ -47,10 +47,11 @@
 
             <div class="mb-3">
                 <label for="visible" class="form-label">Disponibilità</label>
-                <input type="checkbox" name="visible" class="form-control @error('visible') is-invalid @enderror"
-                    id="visible" aria-describedby="visibleHelp" value="1"
-                    @if (old('visible')) checked @endif
-                    style="appearance: auto; -webkit-appearance: checkbox; -moz-appearance: checkbox;">
+                <select name="visible" class="form-control @error('visible') is-invalid @enderror" id="visible"
+                    aria-describedby="visibleHelp">
+                    <option value="0" @if (old('visible', $dish->visible) == 0) selected @endif>Non Disponibile</option>
+                    <option value="1" @if (old('visible', $dish->visible) == 1) selected @endif>Disponibile</option>
+                </select>
                 @error('visible')
                     <div class="invalid-feedback">
                         {{ $message }}

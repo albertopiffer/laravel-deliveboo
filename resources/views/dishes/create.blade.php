@@ -42,19 +42,6 @@
                 @enderror
             </div>
 
-            {{-- <div class="mb-3">
-                <label for="visible" class="form-label">Disponibilità</label>
-                <input type="checkbox" name="visible" class="form-control @error('visible') is-invalid @enderror"
-                    id="visible" aria-describedby="visibleHelp" value="1"
-                    @if (old('visible')) checked @endif
-                    style="appearance: auto; -webkit-appearance: checkbox; -moz-appearance: checkbox;">
-                @error('visible')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div> --}}
-
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
                 <input type="text" name="price" class="form-control  @error('price') is-invalid @enderror"
