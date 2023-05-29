@@ -13,19 +13,21 @@
             <div class="card-body">
                 <div class="d-flex ">
                     <h3 class="card-title">{{ $dish->name }}</h3>
-                    <h6 class="m-auto">TIPOLOGIA</h6>
+                    <p class="m-auto badge rounded-pill text-bg-primary">{{ $dish->tipology }}</p>
                 </div>
+                <p class="card-text">{{ $dish->visible ? 'Disponibile' : 'Non disponibile' }}</p>
                 <p class="card-text">{{ $dish->description }}</p>
                 <h4 class="card-text text-success">€ {{ $dish->price }}</h4>
-                <div class="pt-2 d-flex">
-                    <a class="btn btn-warning me-2 ps-3 pe-3" href="{{ route('dishes.edit', $dish) }}">EDIT</a>
-                    <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-danger" value="DELETE">
-                    </form>
-                </div>
             </div>
+            <div class="pt-2 d-flex">
+                <a class="btn btn-warning me-2 ps-3 pe-3" href="{{ route('dishes.edit', $dish) }}">EDIT</a>
+                <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-danger" value="DELETE">
+                </form>
+            </div>
+        </div>
         </div>
     </section>
 @endsection
