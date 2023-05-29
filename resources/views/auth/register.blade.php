@@ -8,8 +8,10 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
+
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
+
                             <h1>Dati utente</h1>
                             <div class="mb-4 row">
                                 <label for="name"
@@ -79,7 +81,7 @@
                                 <div class="col-md-6">
                                     <input id="p_iva" type="text"
                                         class="form-control @error('p_iva') is-invalid @enderror" name="p_iva"
-                                        value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus>
+                                        value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus maxlength="11">
 
                                     @error('p_iva')
                                         <span class="invalid-feedback" role="alert">
@@ -144,23 +146,6 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
-                                <label for="thumbnail"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Thumbnail') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="thumbnail" type="url"
-                                        class="form-control @error('thumbnail') is-invalid @enderror" name="thumbnail"
-                                        value="{{ old('thumbnail') }}" required autocomplete="thumbnail" autofocus>
-
-                                    @error('thumbnail')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
                             <div class="mb-4 row mb-0">
                                 <label for="typologies" class="form-label">Tipi</label>
                                 <div class="d-flex flex-wrap gap-3 @error('typologies') is-invalid @enderror">
@@ -181,11 +166,12 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="mb-3">
                                 <label for="thumbnail" class="form-label">IMG</label>
                                 <input type="file" name="thumbnail"
                                     class="form-control  @error('thumbnail') is-invalid @enderror" id="thumbnail"
-                                    aria-describedby="thumbnailHelp" value="{{ old('thumbnail') }}">
+                                    aria-describedby="thumbnailHelp" value="{{ old('thumbnail') }}" accept="image/*">
                                 @error('thumbnail')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -199,7 +185,9 @@
                                     </button>
                                 </div>
                             </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>
