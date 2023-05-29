@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-
+                            <h1>Dati utente</h1>
                             <div class="mb-4 row">
                                 <label for="name"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -91,6 +91,7 @@
 
                             {{-- ********************************************************************* --}}
 
+                            <h1>Dati ristorante</h1>
                             <div class="mb-4 row">
                                 <label for="restaurant_name"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Name') }}</label>
