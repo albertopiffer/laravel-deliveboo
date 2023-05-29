@@ -7,7 +7,11 @@
         <h2>{{ $restaurant->address }}</h2>
 
         <p>{{ $restaurant->description }}</p>
-
+        @if ($restaurant->cover_image)
+            <div class="container">
+                <img src="{{ $restaurant->cover_path }}" alt="">
+            </div>
+        @endif
     @empty
         -
     @endforelse
