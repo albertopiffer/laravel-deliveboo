@@ -19,12 +19,16 @@
                 <p class="card-text">{{ $dish->description }}</p>
                 <h4 class="card-text text-success">€ {{ $dish->price }}</h4>
             </div>
-            <div class="pt-2 d-flex">
-                <a class="btn btn-warning me-2 ps-3 pe-3" href="{{ route('dishes.edit', $dish) }}">EDIT</a>
-                <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
+            <div class=" d-flex align-items-center gap-3 p-3">
+                <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary">
+                    <i class="fas fa-pen"></i>
+                </a>
+                <form action="{{ route('dishes.destroy', $dish) }}" method="POST" class="mb-0">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="DELETE">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
                 </form>
             </div>
         </div>
