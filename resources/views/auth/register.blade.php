@@ -20,7 +20,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        value="{{ old('name') }}" autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -136,7 +136,7 @@
                                 <div class="col-md-6">
                                     {{-- <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" autofocus> --}}
                                     <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description"
-                                        value="{{ old('description') }}" required autocomplete="description" autofocus></textarea>
+                                        value="{{ old('description') }}" autocomplete="description" autofocus></textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
