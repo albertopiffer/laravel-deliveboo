@@ -32,7 +32,7 @@
 
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -49,7 +49,7 @@
 
                             <div class="mb-4 row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -66,7 +66,7 @@
 
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -76,7 +76,7 @@
 
                             <div class="mb-4 row">
                                 <label for="p_iva"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="p_iva" type="text"
@@ -96,7 +96,7 @@
                             <h1>Dati ristorante</h1>
                             <div class="mb-4 row">
                                 <label for="restaurant_name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Name') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Name *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="restaurant_name" type="text"
@@ -147,7 +147,7 @@
                             </div>
 
                             <div class="mb-4 row mb-0">
-                                <label for="typologies" class="form-label">Tipi</label>
+                                <label for="typologies" class="form-label">Tipi *</label>
                                 <div class="d-flex flex-wrap gap-3 @error('typologies') is-invalid @enderror">
                                     @foreach ($typologies as $key => $typology)
                                         <div class="form-check">
