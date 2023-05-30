@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\DishController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TypologyController;
 
+use App\Http\Controllers\Api\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,3 +32,5 @@ Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
 
 Route::get('/typologies', [TypologyController::class, 'index']);
 Route::get('/typologies/{id}', [TypologyController::class, 'show']);
+
+Route::post('/save-name', [UserController::class, 'saveName']);
