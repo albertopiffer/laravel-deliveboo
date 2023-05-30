@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
 
             'p_iva' => ['required', 'string', 'max:11', 'unique:' . User::class],
+            'typologies' => 'required_without_all:0'
         ]);
 
         $user = User::create([
