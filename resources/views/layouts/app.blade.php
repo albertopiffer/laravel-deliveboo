@@ -21,12 +21,22 @@
 
 <body>
     <div id="app">
-        @include('partials.header')
-        <main class="">
+        <header>
+            @include('partials.header')
+        </header>
+        <main class="p-4">
             @yield('content')
         </main>
+        <footer>
+            @include('partials.footer')
+        </footer>
     </div>
 </body>
-@include('partials.footer')
 
 </html>
+
+<style scoped>
+    main {
+        min-height: 59vh
+    }
+</style>
