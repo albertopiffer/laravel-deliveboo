@@ -8,7 +8,6 @@ use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TypologyController;
 
 use App\Http\Controllers\Api\OrderController;
-use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +34,3 @@ Route::get('/typologies', [TypologyController::class, 'index']);
 Route::get('/typologies/{id}', [TypologyController::class, 'show']);
 
 Route::post('/order-post', [OrderController::class, 'store']);
-Route::post('/save-name', [UserController::class, 'saveName']);
