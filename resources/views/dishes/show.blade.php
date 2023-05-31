@@ -13,7 +13,7 @@
             <div class="card-body">
                 <div class="d-flex ">
                     <h3 class="card-title">{{ $dish->name }}</h3>
-                    <p class="m-auto badge rounded-pill text-bg-primary">{{ $dish->tipology }}</p>
+                    <p class="m-auto badge rounded-pill text-bg-primary">{{ $dish->typology }}</p>
                 </div>
                 <p class="card-text">{{ $dish->visible ? 'Disponibile' : 'Non disponibile' }}</p>
                 <p class="card-text">{{ $dish->description }}</p>
