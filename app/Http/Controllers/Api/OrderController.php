@@ -21,9 +21,6 @@ class OrderController extends Controller
             'address' => $request->input('address'),
             'phone_number' => $request->input('phone_number'),
             'total' => $request->input('total'),
-
-            'quantity' => $request->input('quantity'),
-            'dish_id' => $request->input('dish_id'),
         ];
 
         $order = new Order();
@@ -34,11 +31,10 @@ class OrderController extends Controller
         $order->total = $data['total'];
         $order->save();
 
-        // Collega il piatto all'ordine utilizzando il metodo attach
-        $order->dishes()->attach($data['dish_id'], ['quantity' => $data['quantity']]);
+        $quantity = $request->input('quantity');
+        $dish_id = $request->input('dish_id');
 
-        // Esegui le operazioni di validazione e salvataggio nel tuo database
-        // Ad esempio, potresti salvare il nome in una tabella "users"
+        $order->dishes()->attach($dish_id, ['quantity' => $quantity]);
 
         return response()->json(['success' => true, 'message' => 'Nome salvato correttamente']);
     }
