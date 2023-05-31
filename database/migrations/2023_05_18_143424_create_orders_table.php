@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('address');
             //$table->string('typology')->nullable();
             $table->string('phone_number', 13)->nullable();
