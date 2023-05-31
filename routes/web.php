@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -33,7 +37,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('restaurants', RestaurantController::class);
 
-    Route::resource('dishes', DishController::class)->withTrashed(['show','edit','update','destroy']);
+    Route::resource('dishes', DishController::class)->withTrashed(['show', 'edit', 'update', 'destroy']);
 });
 
 require __DIR__ . '/auth.php';
