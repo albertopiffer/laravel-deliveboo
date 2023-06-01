@@ -31,11 +31,17 @@ class OrderController extends Controller
         $order->total = $data['total'];
         $order->save();
 
-        $quantity = $request->input('quantity');
-        $dish_id = $request->input('dish_id');
+        $dishes = $request->input('dishes');
 
-        $order->dishes()->attach($dish_id, ['quantity' => $quantity]);
+        foreach ($dishes as $dish) {
+            $dish_id = $dish['id'];
+            $quantity = $dish['quantity'];
 
-        return response()->json(['success' => true, 'message' => 'Nome salvato correttamente']);
+            $order->dishes()->attach($dish_id, ['quantity' => $quantity]);
+        }
+
+        //$order->dishes()->attach($dish_id, ['quantity' => $quantity]);
+
+        return response()->json(['success' => true, 'message' => 'Dati salvati correttamente']);
     }
 }
