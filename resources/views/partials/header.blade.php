@@ -25,6 +25,8 @@
                                 <a class="nav-pills" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
 
                                 <a class="nav-pills" href="{{ route('dishes.create') }}">{{ __('Create') }}</a>
+
+                                <a class="nav-pills" href="{{ route('orders.index') }}">{{ __('Orders') }}</a>
                             </li>
                         @endauth
                     </ul>

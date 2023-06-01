@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,8 +33,9 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource('restaurants', RestaurantController::class);
+    Route::resource('orders', OrderController::class);
 
-    Route::resource('dishes', DishController::class)->withTrashed(['show','edit','update','destroy']);
+    Route::resource('dishes', DishController::class)->withTrashed(['show', 'edit', 'update', 'destroy']);
 });
 
 require __DIR__ . '/auth.php';
