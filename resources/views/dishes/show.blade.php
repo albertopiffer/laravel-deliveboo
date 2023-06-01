@@ -7,8 +7,10 @@
                 <img src="{{ $dish->cover_path }}" class="card-img-top" alt="...">
             </div>
             <div class="card-body">
+
                 <h3 class="card-title">{{ $dish->name }}</h3>
                 <p class="m-auto badge rounded-pill text-bg-primary">{{ $dish->tipology }}</p>
+
                 <p class="card-text">{{ $dish->visible ? 'Disponibile' : 'Non disponibile' }}</p>
                 <h4 class="card-text text-success">€ {{ $dish->price }}</h4>
                 <p class="card-text">{{ $dish->description }}</p>

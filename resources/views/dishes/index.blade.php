@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <a class="text-dark fs-5" href="{{ route('dishes.show', $dish) }}">{{ $dish->name }}</a>
-                                <span class="badge rounded-pill text-bg-primary fs-6">{{ $dish->tipology }}</span>
+                                <span class="badge rounded-pill text-bg-primary fs-6">{{ $dish->typology }}</span>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="pink">{{ $dish->price }}$</div>

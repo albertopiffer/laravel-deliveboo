@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('tipology')->nullable();
+            $table->string('typology')->nullable();
             //$table->boolean('visible')->default(0);
             $table->boolean('visible');
             $table->decimal('price', 4, 2);

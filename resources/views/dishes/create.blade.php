@@ -28,10 +28,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="tipology" class="form-label">Tipologia</label>
-                <input type="text" name="tipology" class="form-control  @error('tipology') is-invalid @enderror"
-                    id="tipology" aria-describedby="tipologyHelp" value="{{ old('tipology') }}">
-                @error('tipology')
+                <label for="typology" class="form-label">Tipologia</label>
+                <input type="text" name="typology" class="form-control  @error('typology') is-invalid @enderror"
+                    id="typology" aria-describedby="typologyHelp" value="{{ old('typology') }}">
+                @error('typology')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
