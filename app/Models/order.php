@@ -9,7 +9,8 @@ class order extends Model
 {
     use HasFactory;
 
-    public function dishes(){
-        return $this->belongsToMany(Dish::class);
+    public function dishes()
+    {
+        return $this->belongsToMany(Dish::class, 'dish_order')->withPivot('quantity');
     }
 }

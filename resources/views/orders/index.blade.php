@@ -10,7 +10,7 @@
                 <th>Indirizzo</th>
                 <th>Numero di Telefono</th>
                 <th>Totale</th>
-                {{-- <th>Azioni</th> --}}
+                <th>Azioni</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +21,9 @@
                     <td>{{ $order->address }}</td>
                     <td>{{ $order->phone_number }}</td>
                     <td>{{ $order->total }}</td>
-                    {{-- <td>
+                    <td>
                         <a href="{{ route('orders.show', $order->id) }}">Visualizza</a>
-                    </td> --}}
+                    </td>
                 </tr>
             @endforeach
         </tbody>
