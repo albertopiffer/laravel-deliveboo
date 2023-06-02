@@ -53,7 +53,7 @@ class DishSeeder extends Seeder
                 "description" => "Un'irresistibile salsa di guacamole preparata con avocado maturo, cipolla rossa, pomodoro, coriandolo e succo di lime fresco. Accompagnato da croccanti nachos fatti in casa. Un classico immancabile per iniziare un autentico pasto messicano.",
                 "typology" => "Antipasto",
                 "visible" => true,
-                "price" => 6.99,
+                "price" => 6.00,
                 "thumbnail" => "https://www.example.com/images/guacamole-fresco.jpg",
                 "restaurant_id" => 1,
             ],
