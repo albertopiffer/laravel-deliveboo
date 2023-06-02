@@ -67,7 +67,7 @@ class DishSeeder extends Seeder
                 "restaurant_id" => 1,
             ],
             [
-                "name" => "Coca Cola Classica",
+                "name" => "Coca Cola",
                 "description" => "Bevi la coca cola che ti fa bene Bevi la coca cola che ti fa digerire Con tutte quelle, tutte quelle bollicine Coca cola sì coca cola, a me mi fa morire Coca cola sì coca cola, a me mi fa impazzire",
                 "typology" => "Bevanda",
                 "visible" => true,
