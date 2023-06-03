@@ -99,14 +99,25 @@
 @endsection
 
 <style scoped>
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(254, 113, 94, 0.25) !important;
+        border-color: #555 !important;
+    }
+
     .back-card-header {
         background-color: #FE715E !important;
         color: white !important;
     }
 
+    .form-check-input:focus {
+        box-shadow: 0 0 0 0.2rem rgba(254, 113, 94, 0.25) !important;
+        border-color: #555 !important;
+    }
+
     .form-check-input:checked {
         background-color: #FE715E !important;
         border-color: #555 !important;
+        box-shadow: 0 0 0 0.2rem rgba(254, 113, 94, 0.25) !important;
     }
 
     .login {
@@ -135,9 +146,9 @@
         font-size: 14px;
 
         width: 60%;
-        background-color: white;
+        background-color: #FE715E;
         border-radius: 25px;
-        color: #FE715E;
+        color: white;
         display: block;
         padding: 10px 5px;
         text-align: center;
@@ -145,7 +156,8 @@
     }
 
     .register-link:hover {
-        background-color: #FE715E;
+        background-color: #c25e51;
+        border-color: #c25e51;
         color: white;
     }
 </style>
