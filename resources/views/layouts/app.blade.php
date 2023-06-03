@@ -24,7 +24,7 @@
         <header>
             @include('partials.header')
         </header>
-        <main class="pt-4">
+        <main>
             @yield('content')
         </main>
         <footer>
@@ -37,6 +37,6 @@
 
 <style scoped>
     main {
-        min-height: 59vh
+        min-height: 60vh
     }
 </style>
