@@ -23,8 +23,8 @@ class UserSeeder extends Seeder
         $faker = Faker::create();
 
         $user = User::create([
-            'name' => 'testuser',
-            'email' => 'testuser@example.com',
+            'name' => 'El Pipito',
+            'email' => 'elpepito@megusta.com',
             'password' => Hash::make('tuEhVgq6a85AW'),
 
             'p_iva' => '12345678900'

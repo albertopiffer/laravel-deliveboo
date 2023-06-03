@@ -40,7 +40,7 @@
 
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input type="text" name="price" class="form-control  @error('price') is-invalid @enderror"
+                <input type="text" name="price" class="form-control @error('price') is-invalid @enderror"
                     id="price" aria-describedby="priceHelp" value="{{ old('price') }}">
                 @error('price')
                     <div class="invalid-feedback">
@@ -60,7 +60,27 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Aggiungi piatto</button>
+            <button type="submit" class="create-button">Aggiungi piatto</button>
         </form>
     </div>
 @endsection
+<style>
+    .create-button {
+        border-radius: 999px;
+        border: 1px solid #FF7659;
+        color: #FF7659;
+        background-color: white;
+        padding: 5px;
+        width: 20%;
+
+        &:hover {
+            color: white;
+            background-color: #FF7659;
+            border: 1px solid white;
+
+            .icon {
+                color: white
+            }
+        }
+    }
+</style>

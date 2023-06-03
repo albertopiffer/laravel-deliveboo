@@ -16,11 +16,11 @@
         <tbody>
             @foreach ($orders as $order)
                 <tr>
-                    <td>{{ $order->id }}</td>
-                    <td>{{ $order->name }}</td>
-                    <td>{{ $order->address }}</td>
-                    <td>{{ $order->phone_number }}</td>
-                    <td>{{ $order->total }}</td>
+                    <td class="p-2">{{ $order->id }}</td>
+                    <td class="p-2">{{ $order->name }}</td>
+                    <td class="p-2">{{ $order->address }}</td>
+                    <td class="text-center p-2">{{ $order->phone_number }}</td>
+                    <td class="p-2">{{ $order->total }}</td>
                     {{-- <td>
                         <a href="{{ route('orders.show', $order->id) }}">Visualizza</a>
                     </td> --}}
@@ -31,8 +31,13 @@
 @endsection
 
 <style>
-    .box-shadow {
-        transition: transform .2s;
-        box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.44);
+    tbody tr:nth-child(odd) {
+        background-color: #555;
+        color: white
+    }
+
+    h1,
+    th {
+        color: #555
     }
 </style>
