@@ -4,7 +4,7 @@
         <div class="row">
             @forelse ($dishes as $dish)
                 <div class="col-lg-3 col-sm-6 col-12 mb-5">
-                    <div class="card bg-white border border-danger rounded border-3 d-flex">
+                    <div class="card bg-white border border-secondary rounded border-3 d-flex">
                         @if ($dish->cover_image)
                             <div class="container">
                                 <img src="{{ $dish->cover_path }}" alt=""
@@ -17,11 +17,11 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <a class="text-dark fs-5" href="{{ route('dishes.show', $dish) }}">{{ $dish->name }}</a>
-                                <span class="badge rounded-pill text-bg-primary fs-6">{{ $dish->typology }}</span>
+                                <span class="badge rounded-pill dish-tipology fs-6">{{ $dish->typology }}</span>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="pink">{{ $dish->price }}$</div>
-                                <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary"><i
+                                <div class="pink dish-price">€{{ $dish->price }}</div>
+                                <a href="{{ route('dishes.edit', $dish) }}" class="btn edit-btn-dishes"><i
                                         class="fa-solid fa-pen"></i></a>
                                 <form action="{{ route('dishes.destroy', $dish) }}" method="POST" class="m-0">
                                     @csrf
@@ -46,6 +46,10 @@
 @endsection
 
 <style scoped>
+
+    a{
+        text-decoration: none !important;
+    }
     .input-with-icon {
         position: relative;
         background-color: #dc3545;
@@ -59,5 +63,26 @@
         position: absolute;
         left: 5px;
         top: 5px;
+    }
+
+    .dish-price{
+        font-weight: bold;
+        color: black;
+        font-size: 20px;
+    }
+
+    .dish-tipology{
+        background-color: #FE715E;
+    }
+
+    .edit-btn-dishes{
+        border-color: #FE715E !important;
+        color: #FE715E !important;
+    }
+
+    .edit-btn-dishes:hover{
+        background-color: #FE715E !important;
+        color: white !important;
+        
     }
 </style>
