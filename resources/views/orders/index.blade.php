@@ -22,7 +22,7 @@
                     <td class="p-2">{{ $order->address }}</td>
                     <td class="text-center p-2">{{ $order->phone_number }}</td>
                     <td class="p-2">{{ $order->total }}</td>
-                    {{-- <td>
+                    <td>
 
                         <a href="{{ route('orders.show', $order->id) }}">Visualizza</a>
                     </td>
