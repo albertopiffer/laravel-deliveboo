@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="jumbotron p-5 mb-4 bg-light rounded-3">
+    <div class="jumbotron mb-4 rounded-3">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">
                 Accedi alla tua Dashboard
@@ -8,13 +8,14 @@
 
         </div>
     </div>
-
-    <div class="content">
-        <div class="container">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi
-                deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis
-                accusamus dolores!
-            </p>
-        </div>
-    </div>
 @endsection
+
+<style scoped>
+    .jumbotron {
+        background-color: #FE715E;
+        min-height: 600px;
+        background-image: url(./images/wave.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+</style>
