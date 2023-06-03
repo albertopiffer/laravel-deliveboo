@@ -18,4 +18,8 @@
         background-repeat: no-repeat;
         background-position: bottom;
     }
+
+    h1 {
+        color: #555;
+    }
 </style>

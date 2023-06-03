@@ -1,12 +1,14 @@
     <header>
         <nav class="navbar navbar-expand-md nav-style navbar-light" style="background-color: #FF7659;">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        <img src="https://picsum.photos/50" alt="">
-                    </div>
-                    {{-- config('app.name', 'Laravel') --}}
-                </a>
+            <div class="container my-3">
+                @auth
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                        <div class="logo_laravel">
+                            <img src="https://picsum.photos/50" alt="">
+                        </div>
+                        {{-- config('app.name', 'Laravel') --}}
+                    </a>
+                @endauth
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -78,14 +80,15 @@
             margin: 10px;
             padding: 13px 35px;
             font-size: 15px;
-            color: grey;
-
-
+            border: 1px solid #FE715E;
+            color: #FE715E;
+            width: 40%;
         }
 
         .nav-pills:hover {
-            background-color: white;
-            opacity: 0.9;
+            color: white;
+            background-color: #FE715E;
+            border: 1px solid white;
         }
 
         @media (max-width: 770px) {
