@@ -24,7 +24,7 @@
         <header>
             @include('partials.header')
         </header>
-        <main class="p-4">
+        <main class="pt-4">
             @yield('content')
         </main>
         <footer>
