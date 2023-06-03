@@ -47,7 +47,7 @@ class OrderController extends Controller
      */
     public function store(StoreorderRequest $request)
     {
-        return view('orders.show', compact('order'));
+        //
     }
 
     /**
@@ -58,7 +58,7 @@ class OrderController extends Controller
      */
     public function show(order $order)
     {
-        //
+        return view('orders.show', compact('order'));
     }
 
     /**

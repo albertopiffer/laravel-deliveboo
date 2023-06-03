@@ -53,7 +53,7 @@ class DishSeeder extends Seeder
                 "description" => "Un'irresistibile salsa di guacamole preparata con avocado maturo, cipolla rossa, pomodoro, coriandolo e succo di lime fresco. Accompagnato da croccanti nachos fatti in casa. Un classico immancabile per iniziare un autentico pasto messicano.",
                 "typology" => "Antipasto",
                 "visible" => true,
-                "price" => 6.99,
+                "price" => 6.00,
                 "thumbnail" => "https://www.example.com/images/guacamole-fresco.jpg",
                 "restaurant_id" => 1,
             ],
@@ -67,7 +67,7 @@ class DishSeeder extends Seeder
                 "restaurant_id" => 1,
             ],
             [
-                "name" => "Coca Cola Classica",
+                "name" => "Coca Cola",
                 "description" => "Bevi la coca cola che ti fa bene Bevi la coca cola che ti fa digerire Con tutte quelle, tutte quelle bollicine Coca cola sì coca cola, a me mi fa morire Coca cola sì coca cola, a me mi fa impazzire",
                 "typology" => "Bevanda",
                 "visible" => true,
