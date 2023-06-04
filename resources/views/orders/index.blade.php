@@ -101,6 +101,9 @@ foreach ($selectedYearOrders as $order) {
         </tbody>
     </table>
 
+
+
+
     <h1>Elenco Ordini</h1>
 
     <table>
@@ -145,48 +148,5 @@ foreach ($selectedYearOrders as $order) {
     td {
         border: 1px solid black !important;
         padding: 1rem !important;
-    }
-
-
-
-    .chart {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    .slice {
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        border-radius: 100% 0 0 100%;
-        transform-origin: 100% 50%;
-    }
-
-    #slice1 {
-        transform: rotate(0deg);
-        background-color: red;
-    }
-
-    #slice2 {
-        transform: rotate(60deg);
-        background-color: blue;
-    }
-
-    #slice3 {
-        transform: rotate(120deg);
-        background-color: green;
-    }
-
-    .inner-circle {
-        position: absolute;
-        top: 25%;
-        left: 25%;
-        width: 50%;
-        height: 50%;
-        background-color: white;
-        border-radius: 50%;
     }
 </style>
