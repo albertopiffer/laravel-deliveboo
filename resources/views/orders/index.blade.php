@@ -2,6 +2,8 @@
 @section('content')
     <div class="container">
 
+        <h1>Pie Charts</h1>
+
         @php
             // Recupera l'anno selezionato dalla richiesta
 $selectedYear = request('selected_year', date('Y'));
@@ -13,7 +15,7 @@ $selectedYear = request('selected_year', date('Y'));
             $totalSpecificYearOrders = $specificYearOrders->count();
         @endphp
 
-        <div class="card">
+        <div>
 
             @php
                 // Array per memorizzare il totale degli ordini per ogni mese
@@ -50,12 +52,11 @@ foreach ($selectedYearOrders as $order) {
                 </form>
 
                 <!-- Mostra il numero totale di ordini nell'anno selezionato -->
-                Total Orders in {{ $selectedYear }}: {{ $totalSpecificYearOrders }}
+                {{-- Total Orders in {{ $selectedYear }}: {{ $totalSpecificYearOrders }} --}}
 
             </div>
         </div>
 
-        <h1>Pie Chart</h1>
         <select id="chartType">
             <option value="orders">Total Orders</option>
             <option value="earnings">Total Earnings</option>
