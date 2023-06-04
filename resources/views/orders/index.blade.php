@@ -1,5 +1,42 @@
 @extends('layouts.app')
 @section('content')
+    <h1>Pie Chart</h1>
+    <select id="chartType">
+        <option value="orders">Total Orders</option>
+        <option value="earnings">Total Earnings</option>
+    </select>
+
+    <div id="chartContainer">
+        <canvas id="ordersChart" style="max-width: 300px; max-height: 300px;"></canvas>
+        <canvas id="earningsChart" style="max-width: 300px; max-height: 300px;"></canvas>
+    </div>
+
+    <script>
+        var chartTypeSelect = document.getElementById('chartType');
+        var chartContainer = document.getElementById('chartContainer');
+        var ordersChart = document.getElementById('ordersChart').getContext('2d');
+        var earningsChart = document.getElementById('earningsChart').getContext('2d');
+
+        // Set initial visibility of the charts
+        ordersChart.canvas.style.display = 'block';
+        earningsChart.canvas.style.display = 'none';
+
+        chartTypeSelect.addEventListener('change', function() {
+            var selectedChart = chartTypeSelect.value;
+
+            if (selectedChart === 'orders') {
+                ordersChart.canvas.style.display = 'block';
+                earningsChart.canvas.style.display = 'none';
+            } else if (selectedChart === 'earnings') {
+                ordersChart.canvas.style.display = 'none';
+                earningsChart.canvas.style.display = 'block';
+            }
+        });
+
+        // Rest of your PHP and chart creation code...
+        // ...
+    </script>
+
     @php
         // Recupera l'anno selezionato dalla richiesta
 $selectedYear = request('selected_year', date('Y'));
@@ -105,8 +142,7 @@ foreach ($selectedYearOrders as $order) {
 
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
-    <canvas id="ordersChart" style="max-width: 300px; max-height: 300px;"></canvas>
-    <canvas id="earningsChart" style="max-width: 300px; max-height: 300px;"></canvas>
+
 
     <script>
         // Ottieni i dati dei mesi e dei totali ordini dalla tabella
