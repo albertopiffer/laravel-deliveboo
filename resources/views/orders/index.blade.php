@@ -21,7 +21,9 @@ $selectedYear = request('selected_year', date('Y'));
             $earningsPerMonth = [];
             
             // Recupera tutti gli ordini dell'anno selezionato
-$selectedYearOrders = App\Models\Order::whereYear('created_at', $selectedYear)->get();
+$selectedYearOrders = App\Models\Order::whereYear('created_at', $selectedYear)
+    ->orderBy('created_at', 'asc')
+    ->get();
 
 // Calcola il totale degli ordini e la somma dei totali guadagnati per ogni mese
 foreach ($selectedYearOrders as $order) {
@@ -101,7 +103,104 @@ foreach ($selectedYearOrders as $order) {
         </tbody>
     </table>
 
+    {{-- ////////////////////////////////////////////////////////////////////// --}}
 
+    <canvas id="ordersPieChart"></canvas>
+    <canvas id="earningsPieChart"></canvas>
+
+    @php
+        $labels = [];
+        $totalOrders = [];
+        $totalEarnings = [];
+        
+        foreach ($ordersPerYear as $yearData) {
+            $labels[] = $yearData->year;
+            $totalOrders[] = $yearData->total_orders;
+            $totalEarnings[] = $yearData->total_earnings;
+        }
+    @endphp
+
+    <script>
+        var ordersCtx = document.getElementById('ordersPieChart').getContext('2d');
+        var ordersData = {
+            labels: [
+                @foreach ($labels as $label)
+                    '{{ $label }}',
+                @endforeach
+            ],
+            datasets: [{
+                data: [
+                    @foreach ($totalOrders as $order)
+                        {{ $order }},
+                    @endforeach
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(255, 159, 64, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var ordersOptions = {
+            responsive: true
+        };
+
+        var ordersPieChart = new Chart(ordersCtx, {
+            type: 'pie',
+            data: ordersData,
+            options: ordersOptions
+        });
+
+        var earningsCtx = document.getElementById('earningsPieChart').getContext('2d');
+        var earningsData = {
+            labels: [
+                @foreach ($labels as $label)
+                    '{{ $label }}',
+                @endforeach
+            ],
+            datasets: [{
+                data: [
+                    @foreach ($totalEarnings as $earnings)
+                        {{ $earnings }},
+                    @endforeach
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(255, 159, 64, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var earningsOptions = {
+            responsive: true
+        };
+
+        var earningsPieChart = new Chart(earningsCtx, {
+            type: 'pie',
+            data: earningsData,
+            options: earningsOptions
+        });
+    </script>
+
+    {{-- ////////////////////////////////////////////////////////////////////// --}}
 
 
     <h1>Elenco Ordini</h1>
