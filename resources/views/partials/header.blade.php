@@ -23,11 +23,11 @@
                         <li class="nav-item">
                             <a class=" nav-pills" href="{{ route('restaurants.index') }}">{{ __('Il tuo ristorante') }}</a>
 
-                            <a class="nav-pills" href="{{ route('dishes.index') }}">{{ __('Dishes') }}</a>
+                            <a class="nav-pills" href="{{ route('dishes.index') }}">{{ __('Piatti') }}</a>
 
-                            <a class="nav-pills" href="{{ route('dishes.create') }}">{{ __('Create') }}</a>
+                            <a class="nav-pills" href="{{ route('dishes.create') }}">{{ __('Crea') }}</a>
 
-                            <a class="nav-pills" href="{{ route('orders.index') }}">{{ __('Orders') }}</a>
+                            <a class="nav-pills" href="{{ route('orders.index') }}">{{ __('Ordini') }}</a>
                         </li>
                     @endauth
                 </ul>

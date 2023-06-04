@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Edit</h1>
-
-    <div class="container">
+    <div class="container mt-4">
         <form action="{{ route('dishes.update', $dish) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -80,7 +78,27 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Modifica</button>
+            <button type="submit" class="create-button">Modifica</button>
         </form>
     </div>
 @endsection
+<style>
+    .create-button {
+        border-radius: 999px;
+        border: 1px solid #FF7659;
+        color: #FF7659;
+        background-color: white;
+        padding: 5px;
+        width: 20%;
+
+        &:hover {
+            color: white;
+            background-color: #FF7659;
+            border: 1px solid white;
+
+            .icon {
+                color: white
+            }
+        }
+    }
+</style>
