@@ -103,10 +103,97 @@ foreach ($selectedYearOrders as $order) {
         </tbody>
     </table>
 
-    {{-- ////////////////////////////////////////////////////////////////////// --}}
+    {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
-    <canvas id="ordersPieChart"></canvas>
-    <canvas id="earningsPieChart"></canvas>
+    <canvas id="ordersChart" style="max-width: 300px; max-height: 300px;"></canvas>
+    <canvas id="earningsChart" style="max-width: 300px; max-height: 300px;"></canvas>
+
+    <script>
+        // Ottieni i dati dei mesi e dei totali ordini dalla tabella
+        var monthsOrders = {!! json_encode(array_keys($ordersPerMonth)) !!};
+        var totalOrders = {!! json_encode(array_values($ordersPerMonth)) !!};
+
+        // Crea il grafico a torta per gli ordini utilizzando Chart.js
+        var ctxOrders = document.getElementById('ordersChart').getContext('2d');
+        var ordersChart = new Chart(ctxOrders, {
+            type: 'pie',
+            data: {
+                labels: monthsOrders.map(function(month) {
+                    return new Date(Date.parse(month + " 1, 2000")).toLocaleString('default', {
+                        month: 'long'
+                    });
+                }),
+                datasets: [{
+                    data: totalOrders,
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                    ],
+                    hoverBackgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ]
+                }]
+            },
+            options: {
+                animation: {
+                    animateRotate: true,
+                    animateScale: true
+                }
+            }
+        });
+
+        // Ottieni i dati dei mesi e dei totali guadagni dalla tabella
+        var monthsEarnings = {!! json_encode(array_keys($earningsPerMonth)) !!};
+        var totalEarnings = {!! json_encode(array_values($earningsPerMonth)) !!};
+
+        // Crea il grafico a torta per i guadagni utilizzando Chart.js
+        var ctxEarnings = document.getElementById('earningsChart').getContext('2d');
+        var earningsChart = new Chart(ctxEarnings, {
+            type: 'pie',
+            data: {
+                labels: monthsEarnings.map(function(month) {
+                    return new Date(Date.parse(month + " 1, 2000")).toLocaleString('default', {
+                        month: 'long'
+                    });
+                }),
+                datasets: [{
+                    data: totalEarnings,
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                    ],
+                    hoverBackgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ]
+                }]
+            },
+            options: {
+                animation: {
+                    animateRotate: true,
+                    animateScale: true
+                }
+            }
+        });
+    </script>
+
+    {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+
+    <canvas id="ordersPieChart" style="max-width: 300px; max-height: 300px;"></canvas>
+    <canvas id="earningsPieChart" style="max-width: 300px; max-height: 300px;"></canvas>
 
     @php
         $labels = [];
@@ -200,7 +287,7 @@ foreach ($selectedYearOrders as $order) {
         });
     </script>
 
-    {{-- ////////////////////////////////////////////////////////////////////// --}}
+    {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
 
     <h1>Elenco Ordini</h1>
