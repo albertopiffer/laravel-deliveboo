@@ -1,60 +1,28 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Pie Chart</h1>
-    <select id="chartType">
-        <option value="orders">Total Orders</option>
-        <option value="earnings">Total Earnings</option>
-    </select>
+    <div class="container">
 
-    <div id="chartContainer">
-        <canvas id="ordersChart" style="max-width: 300px; max-height: 300px;"></canvas>
-        <canvas id="earningsChart" style="max-width: 300px; max-height: 300px;"></canvas>
-    </div>
-
-    <script>
-        var chartTypeSelect = document.getElementById('chartType');
-        var chartContainer = document.getElementById('chartContainer');
-        var ordersChart = document.getElementById('ordersChart').getContext('2d');
-        var earningsChart = document.getElementById('earningsChart').getContext('2d');
-
-        // Set initial visibility of the charts
-        ordersChart.canvas.style.display = 'block';
-        earningsChart.canvas.style.display = 'none';
-
-        chartTypeSelect.addEventListener('change', function() {
-            var selectedChart = chartTypeSelect.value;
-
-            if (selectedChart === 'orders') {
-                ordersChart.canvas.style.display = 'block';
-                earningsChart.canvas.style.display = 'none';
-            } else if (selectedChart === 'earnings') {
-                ordersChart.canvas.style.display = 'none';
-                earningsChart.canvas.style.display = 'block';
-            }
-        });
-    </script>
-
-    @php
-        // Recupera l'anno selezionato dalla richiesta
+        @php
+            // Recupera l'anno selezionato dalla richiesta
 $selectedYear = request('selected_year', date('Y'));
 
 // Filtra gli ordini in base all'anno selezionato
-        $specificYearOrders = App\Models\Order::whereYear('created_at', $selectedYear)->get();
-        
-        // Calcola il numero totale di ordini nell'anno selezionato
-        $totalSpecificYearOrders = $specificYearOrders->count();
-    @endphp
-
-    <div class="card">
-
-        @php
-            // Array per memorizzare il totale degli ordini per ogni mese
-            $ordersPerMonth = [];
+            $specificYearOrders = App\Models\Order::whereYear('created_at', $selectedYear)->get();
             
-            // Array per memorizzare la somma dei totali guadagnati per ogni mese
-            $earningsPerMonth = [];
-            
-            // Recupera tutti gli ordini dell'anno selezionato
+            // Calcola il numero totale di ordini nell'anno selezionato
+            $totalSpecificYearOrders = $specificYearOrders->count();
+        @endphp
+
+        <div class="card">
+
+            @php
+                // Array per memorizzare il totale degli ordini per ogni mese
+                $ordersPerMonth = [];
+                
+                // Array per memorizzare la somma dei totali guadagnati per ogni mese
+                $earningsPerMonth = [];
+                
+                // Recupera tutti gli ordini dell'anno selezionato
 $selectedYearOrders = App\Models\Order::whereYear('created_at', $selectedYear)
     ->orderBy('created_at', 'asc')
     ->get();
@@ -62,29 +30,82 @@ $selectedYearOrders = App\Models\Order::whereYear('created_at', $selectedYear)
 // Calcola il totale degli ordini e la somma dei totali guadagnati per ogni mese
 foreach ($selectedYearOrders as $order) {
     $month = $order->created_at->format('m');
-                $ordersPerMonth[$month] = isset($ordersPerMonth[$month]) ? $ordersPerMonth[$month] + 1 : 1;
-                $earningsPerMonth[$month] = isset($earningsPerMonth[$month]) ? $earningsPerMonth[$month] + $order->total : $order->total;
-            }
-        @endphp
+                    $ordersPerMonth[$month] = isset($ordersPerMonth[$month]) ? $ordersPerMonth[$month] + 1 : 1;
+                    $earningsPerMonth[$month] = isset($earningsPerMonth[$month]) ? $earningsPerMonth[$month] + $order->total : $order->total;
+                }
+            @endphp
 
-        <div class="card-body">
-            <!-- Mostra la select per selezionare l'anno -->
-            <form action="{{ url('/orders') }}" method="GET">
-                <label for="selected_year">Seleziona l'anno:</label>
-                <select name="selected_year" id="selected_year">
-                    @for ($year = 2020; $year <= date('Y'); $year++)
-                        <option value="{{ $year }}" {{ $year == $selectedYear ? 'selected' : '' }}>
-                            {{ $year }}
-                        </option>
-                    @endfor
-                </select>
-                <button type="submit">Visualizza</button>
-            </form>
+            <div class="card-body">
+                <!-- Mostra la select per selezionare l'anno -->
+                <form action="{{ url('/orders') }}" method="GET">
+                    <label for="selected_year">Seleziona l'anno:</label>
+                    <select name="selected_year" id="selected_year">
+                        @for ($year = 2020; $year <= date('Y'); $year++)
+                            <option value="{{ $year }}" {{ $year == $selectedYear ? 'selected' : '' }}>
+                                {{ $year }}
+                            </option>
+                        @endfor
+                    </select>
+                    <button type="submit">Visualizza</button>
+                </form>
 
-            <!-- Mostra il numero totale di ordini nell'anno selezionato -->
-            Total Orders in {{ $selectedYear }}: {{ $totalSpecificYearOrders }}
+                <!-- Mostra il numero totale di ordini nell'anno selezionato -->
+                Total Orders in {{ $selectedYear }}: {{ $totalSpecificYearOrders }}
+
+            </div>
+        </div>
+
+        <h1>Pie Chart</h1>
+        <select id="chartType">
+            <option value="orders">Total Orders</option>
+            <option value="earnings">Total Earnings</option>
+        </select>
+
+        <div class="d-flex">
+
+            <div id="chartContainer2">
+                <canvas id="ordersPieChart" style="max-width: 300px; max-height: 300px;"></canvas>
+                <canvas id="earningsPieChart" style="max-width: 300px; max-height: 300px;"></canvas>
+            </div>
+
+            <div id="chartContainer1">
+                <canvas id="ordersChart" style="max-width: 300px; max-height: 300px;"></canvas>
+                <canvas id="earningsChart" style="max-width: 300px; max-height: 300px;"></canvas>
+            </div>
 
         </div>
+
+        <script>
+            var chartTypeSelect = document.getElementById('chartType');
+            var chartContainer1 = document.getElementById('chartContainer1');
+            var chartContainer2 = document.getElementById('chartContainer2');
+            var ordersChart = document.getElementById('ordersChart').getContext('2d');
+            var earningsChart = document.getElementById('earningsChart').getContext('2d');
+            var ordersPieChart = document.getElementById('ordersPieChart').getContext('2d');
+            var earningsPieChart = document.getElementById('earningsPieChart').getContext('2d');
+
+            // Set initial visibility of the charts
+            ordersChart.canvas.style.display = 'block';
+            earningsChart.canvas.style.display = 'none';
+            ordersPieChart.canvas.style.display = 'block';
+            earningsPieChart.canvas.style.display = 'none';
+
+            chartTypeSelect.addEventListener('change', function() {
+                var selectedChart = chartTypeSelect.value;
+
+                if (selectedChart === 'orders') {
+                    ordersChart.canvas.style.display = 'block';
+                    earningsChart.canvas.style.display = 'none';
+                    ordersPieChart.canvas.style.display = 'block';
+                    earningsPieChart.canvas.style.display = 'none';
+                } else if (selectedChart === 'earnings') {
+                    ordersChart.canvas.style.display = 'none';
+                    earningsChart.canvas.style.display = 'block';
+                    ordersPieChart.canvas.style.display = 'none';
+                    earningsPieChart.canvas.style.display = 'block';
+                }
+            });
+        </script>
     </div>
 
     <h1>Totali Ordini per Mese</h1>
@@ -225,8 +246,6 @@ foreach ($selectedYearOrders as $order) {
 
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
-    <canvas id="ordersPieChart" style="max-width: 300px; max-height: 300px;"></canvas>
-    <canvas id="earningsPieChart" style="max-width: 300px; max-height: 300px;"></canvas>
 
     @php
         $labels = [];
@@ -255,23 +274,20 @@ foreach ($selectedYearOrders as $order) {
                     @endforeach
                 ],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.7)',
-                    'rgba(54, 162, 235, 0.7)',
-                    'rgba(75, 192, 192, 0.7)',
-                    'rgba(255, 159, 64, 0.7)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    'rgba(153, 102, 255, 0.7)'
+                ]
             }]
         };
 
         var ordersOptions = {
-            responsive: true
+            responsive: true,
+            animation: {
+                animateRotate: true,
+                animateScale: true
+            }
         };
 
         var ordersPieChart = new Chart(ordersCtx, {
@@ -294,23 +310,20 @@ foreach ($selectedYearOrders as $order) {
                     @endforeach
                 ],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.7)',
-                    'rgba(54, 162, 235, 0.7)',
-                    'rgba(75, 192, 192, 0.7)',
-                    'rgba(255, 159, 64, 0.7)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    'rgba(153, 102, 255, 0.7)'
+                ]
             }]
         };
 
         var earningsOptions = {
-            responsive: true
+            responsive: true,
+            animation: {
+                animateRotate: true,
+                animateScale: true
+            }
         };
 
         var earningsPieChart = new Chart(earningsCtx, {
