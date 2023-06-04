@@ -124,7 +124,7 @@ foreach ($selectedYearOrders as $order) {
                 <tr>
                     <td>{{ date('F', mktime(0, 0, 0, $month, 1)) }}</td>
                     <td>{{ $totalOrders }}</td>
-                    <td>{{ $earningsPerMonth[$month] }}</td>
+                    <td>{{ number_format($earningsPerMonth[$month], 2) }}</td>
                 </tr>
             @endforeach
         </tbody>
