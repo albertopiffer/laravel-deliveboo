@@ -32,9 +32,6 @@
                 earningsChart.canvas.style.display = 'block';
             }
         });
-
-        // Rest of your PHP and chart creation code...
-        // ...
     </script>
 
     @php
