@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <h1>Dettagli dell'ordine</h1>
         <h2>Informazioni sull'ordine</h2>
         <p><strong>ID ordine:</strong> {{ $order->id }}</p>
-        <p><strong>Data:</strong> {{ $order->created_at }}</p>
+        <p><strong>Data:</strong> {{ $order->created_at->format('d/m/Y H:i:s') }}</p>
         <!-- Aggiungi altre informazioni sull'ordine -->
 
         <h2>Piatti ordinati</h2>
@@ -34,8 +34,14 @@
 @endsection
 
 <style>
-    .box-shadow {
-        transition: transform .2s;
-        box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.44);
+    tbody tr:nth-child(odd) {
+        background-color: #878585;
+        color: white
+    }
+
+    h1,
+    h2,
+    th {
+        color: #555;
     }
 </style>
