@@ -371,21 +371,12 @@ foreach ($selectedYearOrders as $order) {
 
 <style>
     tbody tr:nth-child(odd) {
-        background-color: #555;
+        background-color: #878585;
         color: white
     }
 
     h1,
     th {
         color: #555
-    }
-
-    * {
-        color: black !important;
-    }
-
-    td {
-        border: 1px solid black !important;
-        padding: 1rem !important;
     }
 </style>
