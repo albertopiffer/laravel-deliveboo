@@ -12,7 +12,7 @@
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
 
-                            <h1>Dati utente</h1>
+                            <h3>Dati utente</h3>
                             <div class="mb-4 row">
                                 <label for="name"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -93,7 +93,7 @@
 
                             {{-- ********************************************************************* --}}
 
-                            <h1>Dati ristorante</h1>
+                            <h3>Dati ristorante</h3>
                             <div class="mb-4 row">
                                 <label for="restaurant_name"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Name *') }}</label>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="register-btn">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
@@ -194,3 +194,50 @@
         </div>
     </div>
 @endsection
+
+<style>
+    h3 {
+        font-size: 2.5rem;
+        color: #555;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(254, 113, 94, 0.25) !important;
+        border-color: #555 !important;
+    }
+
+    .form-check-input:focus {
+        box-shadow: 0 0 0 0.2rem rgba(254, 113, 94, 0.25) !important;
+        border-color: #555 !important;
+
+    }
+
+    .form-check-input:checked {
+        background-color: #FE715E !important;
+        border-color: #555 !important;
+    }
+
+    .card-header {
+        background-color: #FE715E !important;
+        color: white !important;
+    }
+
+    .register-btn {
+        font-size: 14px;
+
+        width: 60%;
+        background-color: #FE715E;
+        border-radius: 25px;
+        color: white;
+        display: block;
+        padding: 10px 5px;
+        text-align: center;
+        border: 2px solid #FE715E;
+    }
+
+    .register-btn:hover {
+        background-color: #c25e51;
+        border-color: #c25e51;
+        color: white;
+    }
+</style>
