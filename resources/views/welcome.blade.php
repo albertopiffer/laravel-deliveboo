@@ -12,7 +12,7 @@
 
 <style scoped>
     .jumbotron {
-        min-height: 62.9vh;
+        min-height: 68.9vh;
         background-image: url(./images/wave.svg);
         background-repeat: no-repeat;
         background-position: bottom;
