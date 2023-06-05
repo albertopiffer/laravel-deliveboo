@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-md nav-style navbar-light" style="background-color: #FF7659;">
-        <div class="container my-3">
+        <div class="ms-2">
             @auth
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
@@ -9,6 +9,8 @@
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
             @endauth
+        </div>
+        <div class="container my-3">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -53,7 +55,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 {{-- <a class="dropdown-item " href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a> --}}
-                                <a class="dropdown-item " href="{{ url('profile') }}">{{ __('Profile') }}</a>
+                                <a class="dropdown-item " href="{{ url('profile') }}">{{ __('Profilo') }}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -83,9 +85,9 @@
 
         .nav-pills {
             background-color: white;
-            border-radius: 999px;
+            border-radius: 8px;
             margin: 10px;
-            padding: 13px 35px;
+            padding: 10px 30px;
             font-size: 15px;
             border: 1px solid #FE715E;
             color: #FE715E;
