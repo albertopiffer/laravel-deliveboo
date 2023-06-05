@@ -20,6 +20,7 @@
                                 <span class="badge rounded-pill dish-tipology fs-6">{{ $dish->typology }}</span>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-0">{{ $dish->visible == 1 ? 'Disponibile' : 'Non disponibile' }}</p>
                                 <div class="pink dish-price">€{{ $dish->price }}</div>
                                 <a href="{{ route('dishes.edit', $dish) }}" class="btn edit-btn-dishes"><i
                                         class="fa-solid fa-pen"></i></a>

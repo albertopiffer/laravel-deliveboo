@@ -15,7 +15,7 @@
                 <h4 class="card-text text-success">€ {{ $dish->price }}</h4>
                 <p class="card-text">{{ $dish->description }}</p>
                 <div class=" d-flex align-items-center gap-3 p-3">
-                    <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary">
+                    <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-primary text-white">
                         <i class="fas fa-pen"></i>
                     </a>
                     <form action="{{ route('dishes.destroy', $dish) }}" method="POST" class="mb-0">

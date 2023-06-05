@@ -6,7 +6,7 @@
             <div class="card" style="width:20rem">
                 @if ($restaurant->cover_image)
                     <div class="container">
-                        <img src="{{ $restaurant->cover_path }}" alt="" class="rounded p-2">
+                        <img src="{{ $restaurant->cover_path }}" alt="" class="rounded p-2 w-100">
                     </div>
                 @else
                     <div class="container bg-card">
