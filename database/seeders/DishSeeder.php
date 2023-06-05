@@ -86,13 +86,23 @@ class DishSeeder extends Seeder
                 "restaurant_id" => 2,
             ],
 
+            // [
+            //     "name" => "Insalata Mediterranea",
+            //     "description" => "Un'insalata fresca e colorata che unisce sapori mediterranei e ingredienti nutrienti. Preparata con pomodori succosi, cetrioli croccanti, olive nere, cipolle rosse, feta cremosa e condita con olio extravergine d'oliva e succo di limone fresco. Un'esplosione di freschezza e gusto per una deliziosa esperienza vegetale.",
+            //     "typology" => "Insalata",
+            //     "visible" => true,
+            //     "price" => 9.00,
+            //     "thumbnail" => "https://www.example.com/images/insalata-mediterranea.jpg",
+            //     "restaurant_id" => 3,
+            // ],
+
             [
-                "name" => "Insalata Mediterranea",
-                "description" => "Un'insalata fresca e colorata che unisce sapori mediterranei e ingredienti nutrienti. Preparata con pomodori succosi, cetrioli croccanti, olive nere, cipolle rosse, feta cremosa e condita con olio extravergine d'oliva e succo di limone fresco. Un'esplosione di freschezza e gusto per una deliziosa esperienza vegetale.",
-                "typology" => "Insalata",
+                "name" => "Bistecca della Libertà",
+                "description" => "La Bistecca della Libertà è un piatto unico che incarna l'essenza dei sapori trentini. Preparata con maestria, questa bistecca ti offre un'esperienza culinaria straordinaria. Tuttavia, vorremmo sottolineare che la carne di orso utilizzata nella bistecca non proviene in alcun modo dagli orsi detenuti. No davvero ragazzi lo giuro ASSOLUTAMENTE non viene da li non abbiamo niente da nascondere.",
+                "typology" => "Piatto principale",
                 "visible" => true,
-                "price" => 9.00,
-                "thumbnail" => "https://www.example.com/images/insalata-mediterranea.jpg",
+                "price" => 49.00,
+                "thumbnail" => "https://www.example.com/images/bistecca-della-liberta.jpg",
                 "restaurant_id" => 3,
             ],
 
@@ -106,13 +116,23 @@ class DishSeeder extends Seeder
                 "restaurant_id" => 4,
             ],
 
+            // [
+            //     "name" => "Bowl Mediterraneo",
+            //     "description" => "Un bowl ricco di sapori mediterranei e ingredienti salutari. Contiene una base di quinoa, accompagnata da pomodori ciliegini, cetrioli a fette, olive nere, peperoni arrostiti e feta sbriciolata. Il tutto condito con un mix di olio extravergine d'oliva, succo di limone e una spruzzata di erbe aromatiche. Un'esplosione di freschezza e nutrienti per un pasto bilanciato e delizioso.",
+            //     "typology" => "Bowl",
+            //     "visible" => true,
+            //     "price" => 11.00,
+            //     "thumbnail" => "https://www.example.com/images/bowl-mediterraneo.jpg",
+            //     "restaurant_id" => 5,
+            // ],
+
             [
-                "name" => "Bowl Mediterraneo",
-                "description" => "Un bowl ricco di sapori mediterranei e ingredienti salutari. Contiene una base di quinoa, accompagnata da pomodori ciliegini, cetrioli a fette, olive nere, peperoni arrostiti e feta sbriciolata. Il tutto condito con un mix di olio extravergine d'oliva, succo di limone e una spruzzata di erbe aromatiche. Un'esplosione di freschezza e nutrienti per un pasto bilanciato e delizioso.",
-                "typology" => "Bowl",
+                "name" => "Regale Piatto d'Oro",
+                "description" => "Un piatto straordinariamente pomposo e costoso che incarna l'essenza del lusso e dell'eccesso. Gusta l'eleganza culinaria con un filetto di manzo di Kobe delicatamente cotto, ricoperto di foglie d'oro 24 carati. Accompagnato da una purea di tartufo bianco pregiato, caviale Beluga e asparagi viola. Ogni morso è un'esperienza regale che ti trasporterà nel mondo sfarzoso del Castello delle Cerimonie.",
+                "typology" => "Piatto principale",
                 "visible" => true,
-                "price" => 11.00,
-                "thumbnail" => "https://www.example.com/images/bowl-mediterraneo.jpg",
+                "price" => 250.00,
+                "thumbnail" => "https://www.example.com/images/regale-piatto-doro.jpg",
                 "restaurant_id" => 5,
             ],
 
