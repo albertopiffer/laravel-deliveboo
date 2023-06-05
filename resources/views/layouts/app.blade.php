@@ -39,6 +39,6 @@
 
 <style scoped>
     main {
-        min-height: 60vh
+        min-height: 68.9vh
     }
 </style>
