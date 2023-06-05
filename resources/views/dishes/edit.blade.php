@@ -84,7 +84,7 @@
 @endsection
 <style>
     .create-button {
-        border-radius: 999px;
+        border-radius: 8px;
         border: 1px solid #FF7659;
         color: #FF7659;
         background-color: white;

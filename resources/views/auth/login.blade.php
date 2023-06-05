@@ -121,9 +121,9 @@
     }
 
     .login {
-        border-radius: 999px;
+        border-radius: 8px;
         background-color: #FE715E;
-        padding: 13px 35px;
+        padding: 5px 8px;
         border: none;
         color: white;
         font-size: 18px;
@@ -147,7 +147,7 @@
 
         width: 60%;
         background-color: #FE715E;
-        border-radius: 25px;
+        border-radius: 8px;
         color: white;
         display: block;
         padding: 10px 5px;
