@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('address');
             //$table->string('typology')->nullable();
             $table->string('phone_number', 13)->nullable();
-            $table->decimal('total', 4, 2);
+            $table->decimal('total', 5, 2);
 
             $table->timestamps();
         });

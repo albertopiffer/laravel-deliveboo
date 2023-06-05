@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('typology')->nullable();
             //$table->boolean('visible')->default(0);
             $table->boolean('visible');
-            $table->decimal('price', 4, 2);
+            $table->decimal('price', 5, 2);
             $table->string('thumbnail')->nullable();
 
             $table->softDeletes();
