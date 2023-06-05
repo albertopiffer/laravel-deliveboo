@@ -137,6 +137,36 @@ class DishSeeder extends Seeder
             ],
 
             [
+                "name" => "Pizza Scintillante",
+                "description" => "Una pizza che incanta gli occhi e il palato! La base croccante è coperta con salsa di pomodoro brillante e una generosa quantità di formaggio filante. Poi viene guarnita con peperoni multicolori, olive scintillanti e una cascata di paillettes commestibili. Questa pizza pacchiana è una vera e propria festa per i sensi!",
+                "typology" => "Pizza",
+                "visible" => true,
+                "price" => 81.50,
+                "thumbnail" => "https://www.example.com/images/pizza-scintillante.jpg",
+                "restaurant_id" => 5,
+            ],
+
+            [
+                "name" => "Risotto Dorato",
+                "description" => "Un risotto cremoso e ricco preparato con riso Carnaroli di alta qualità, che viene cotto lentamente con brodo di carne e vino bianco. Durante la fase di mantecatura, vengono aggiunte foglie d'oro 24 carati per dare al piatto un aspetto sfarzoso. Il risotto è arricchito con tartufo bianco pregiato e servito con scaglie di parmigiano Reggiano. Un piatto che unisce gusto e opulenza.",
+                "typology" => "Primo piatto",
+                "visible" => true,
+                "price" => 150.00,
+                "thumbnail" => "https://www.example.com/images/risotto-dorato.jpg",
+                "restaurant_id" => 5,
+            ],
+
+            [
+                "name" => "Gelato Pacchiano al Cioccolato",
+                "description" => "Un dessert decadente e divertente che combina la dolcezza della fragola con l'eccentricità pacchiana. Il gelato alla fragola artigianale viene servito in una coppa con una cascata di panna montata colorata, ciuffi di zucchero filato rosa e guarnito con confetti colorati. Un'esplosione di gusto e divertimento che delizierà sia i bambini che gli adulti.",
+                "typology" => "Dessert",
+                "visible" => true,
+                "price" => 29.01,
+                "thumbnail" => "https://www.example.com/images/gelato-pacchiano-fragola.jpg",
+                "restaurant_id" => 5,
+            ],
+
+            [
                 "name" => "Wrap Fusion",
                 "description" => "Un wrap avvolgente che fonde sapori provenienti da diverse tradizioni culinarie. Riempito con pollo marinato, hummus cremoso, verdure croccanti e una salsa speziata, offre un equilibrio perfetto tra sapore e freschezza. Avvolto in una morbida tortilla, è il pasto ideale per un pranzo veloce e gustoso.",
                 "typology" => "Wrap",
