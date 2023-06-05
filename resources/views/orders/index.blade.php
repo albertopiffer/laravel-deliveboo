@@ -214,18 +214,32 @@ foreach ($selectedYearOrders as $order) {
                     datasets: [{
                         data: totalOrders,
                         backgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            'rgba(153, 102, 255, 0.7)',
-                            'rgba(255, 159, 64, 0.7)'
+                            '#FF5A5F',
+                            '#FFB85C',
+                            '#FFED4D',
+                            '#C0D725',
+                            '#72CCAF',
+                            '#5BB3FF',
+                            '#A278FF',
+                            '#FF73AB',
+                            '#FF8E7F',
+                            '#FFD08D',
+                            '#D1F2A5',
+                            '#BFF0FF'
                         ],
                         hoverBackgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            '#FF5A5F',
+                            '#FFB85C',
+                            '#FFED4D',
+                            '#C0D725',
+                            '#72CCAF',
+                            '#5BB3FF',
+                            '#A278FF',
+                            '#FF73AB',
+                            '#FF8E7F',
+                            '#FFD08D',
+                            '#D1F2A5',
+                            '#BFF0FF'
                         ]
                     }]
                 },
@@ -254,18 +268,32 @@ foreach ($selectedYearOrders as $order) {
                     datasets: [{
                         data: totalEarnings,
                         backgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            'rgba(153, 102, 255, 0.7)',
-                            'rgba(255, 159, 64, 0.7)'
+                            '#FF5A5F',
+                            '#FFB85C',
+                            '#FFED4D',
+                            '#C0D725',
+                            '#72CCAF',
+                            '#5BB3FF',
+                            '#A278FF',
+                            '#FF73AB',
+                            '#FF8E7F',
+                            '#FFD08D',
+                            '#D1F2A5',
+                            '#BFF0FF'
                         ],
                         hoverBackgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            '#FF5A5F',
+                            '#FFB85C',
+                            '#FFED4D',
+                            '#C0D725',
+                            '#72CCAF',
+                            '#5BB3FF',
+                            '#A278FF',
+                            '#FF73AB',
+                            '#FF8E7F',
+                            '#FFD08D',
+                            '#D1F2A5',
+                            '#BFF0FF'
                         ]
                     }]
                 },
@@ -308,10 +336,18 @@ foreach ($selectedYearOrders as $order) {
                         @endforeach
                     ],
                     backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        'rgba(153, 102, 255, 0.7)'
+                        '#FF5A5F',
+                        '#FFB85C',
+                        '#FFED4D',
+                        '#C0D725',
+                        '#72CCAF',
+                        '#5BB3FF',
+                        '#A278FF',
+                        '#FF73AB',
+                        '#FF8E7F',
+                        '#FFD08D',
+                        '#D1F2A5',
+                        '#BFF0FF'
                     ]
                 }]
             };
@@ -344,10 +380,18 @@ foreach ($selectedYearOrders as $order) {
                         @endforeach
                     ],
                     backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        'rgba(153, 102, 255, 0.7)'
+                        '#FF5A5F',
+                        '#FFB85C',
+                        '#FFED4D',
+                        '#C0D725',
+                        '#72CCAF',
+                        '#5BB3FF',
+                        '#A278FF',
+                        '#FF73AB',
+                        '#FF8E7F',
+                        '#FFD08D',
+                        '#D1F2A5',
+                        '#BFF0FF'
                     ]
                 }]
             };
