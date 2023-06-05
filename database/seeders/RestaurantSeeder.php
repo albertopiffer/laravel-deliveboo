@@ -25,6 +25,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.elpipito.it/wp-content/uploads/2019/11/El-Pipito-Logo-1.png",
                 "typologies_ids" => [8],
                 "user_id" => 1,
+
+                "cover_image" => "uploads/pepito.jpg"
             ],
             [
                 "restaurant_name" => "Sushi Fusion",
@@ -33,6 +35,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.sushifusion.it/wp-content/uploads/2021/05/sushi-fusion.jpg",
                 "typologies_ids" => [1, 11],
                 "user_id" => 2,
+
+                "cover_image" => "uploads/sushi.jpg"
             ],
             // [
             //     "restaurant_name" => "Verde Vita",
@@ -49,6 +53,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.castellerditrento.com/wp-content/uploads/2023/06/Casteller-di-Trento-Logo.png",
                 "typologies_ids" => [4, 12],
                 "user_id" => 3,
+
+                "cover_image" => "uploads/orso.jpg"
             ],
             [
                 "restaurant_name" => "Street Bites",
@@ -57,6 +63,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.streetbites.it/wp-content/uploads/2023/05/street-bites.jpg",
                 "typologies_ids" => [4, 7, 8],
                 "user_id" => 4,
+
+                "cover_image" => "uploads/street.jpg"
             ],
             // [
             //     "restaurant_name" => "Bowl Street",
@@ -73,6 +81,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.castellodellecerimonie.com/wp-content/uploads/2022/05/Castello-delle-Cerimonie-Logo.png",
                 "typologies_ids" => [2, 5, 6],
                 "user_id" => 5,
+
+                "cover_image" => "uploads/castello.jpg"
             ],
             [
                 "restaurant_name" => "Wrap 'n Roll",
@@ -81,6 +91,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.wrapnroll.it/wp-content/uploads/2023/05/wrap-n-roll.jpg",
                 "typologies_ids" => [1, 10],
                 "user_id" => 6,
+
+                "cover_image" => "uploads/wrap.jpg"
             ],
             [
                 "restaurant_name" => "Istanbul Delights",
@@ -89,6 +101,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.istanbuldelights.it/wp-content/uploads/2023/05/istanbul-delights.jpg",
                 "typologies_ids" => [7, 9],
                 "user_id" => 7,
+
+                "cover_image" => "uploads/istanbul.jpg"
             ],
             [
                 "restaurant_name" => "Green Garden",
@@ -97,6 +111,8 @@ class RestaurantSeeder extends Seeder
                 "thumbnail" => "https://www.greengarden.it/wp-content/uploads/2023/05/green-garden.jpg",
                 "typologies_ids" => [12],
                 "user_id" => 8,
+
+                "cover_image" => "uploads/green.jpg"
             ],
 
         ];
@@ -108,6 +124,10 @@ class RestaurantSeeder extends Seeder
             $newrestaurant->address = $restaurant['address'];
             $newrestaurant->description = $restaurant['description'];
             $newrestaurant->thumbnail = $restaurant['thumbnail'];
+
+            if (isset($restaurant['cover_image'])) {
+                $newrestaurant->cover_image = $restaurant['cover_image'];
+            }
 
 
             if (isset($restaurant['user_id'])) {

@@ -29,6 +29,8 @@ class DishSeeder extends Seeder
                 "price" => 10.00,
                 "thumbnail" => "https://www.example.com/images/enchiladas-verdes.jpg",
                 "restaurant_id" => 1,
+
+                "cover_image" => "uploads/ulufnxcqScGGwajV9qM3wLFs2bOgCUVTt4yPzmEr.jpg"
             ],
             [
                 "name" => "Tacos al Pastor",
@@ -38,6 +40,8 @@ class DishSeeder extends Seeder
                 "price" => 13.00,
                 "thumbnail" => "https://www.example.com/images/tacos-al-pastor.jpg",
                 "restaurant_id" => 1,
+
+                "cover_image" => "uploads/ICwkmz4vsuFFk9hwkzJXmV0WdNaSFtiZTGgLd5tb.jpg"
             ],
             [
                 "name" => "Chiles Rellenos",
@@ -47,6 +51,8 @@ class DishSeeder extends Seeder
                 "price" => 8.00,
                 "thumbnail" => "https://www.example.com/images/chiles-rellenos.jpg",
                 "restaurant_id" => 1,
+
+                "cover_image" => "uploads/XAAKFZDV6ANyvc1OMKIkPcB3bhf6lCHiffEo4obc.jpg"
             ],
             [
                 "name" => "Guacamole Fresco",
@@ -56,6 +62,8 @@ class DishSeeder extends Seeder
                 "price" => 6.00,
                 "thumbnail" => "https://www.example.com/images/guacamole-fresco.jpg",
                 "restaurant_id" => 1,
+
+                "cover_image" => "uploads/SVkzkz6ui3kEcXuKdnV1BnAd3IGjpvXsYdgjGGYK.jpg"
             ],
             [
                 "name" => "Tamales de Pollo",
@@ -65,6 +73,8 @@ class DishSeeder extends Seeder
                 "price" => 11.00,
                 "thumbnail" => "https://www.example.com/images/tamales-de-pollo.jpg",
                 "restaurant_id" => 1,
+
+                "cover_image" => "uploads/zXlJEHHV2J5YE2HyFkW90MxIBgigHEnmzIPE2X9I.jpg"
             ],
             [
                 "name" => "Coca Cola",
@@ -74,6 +84,8 @@ class DishSeeder extends Seeder
                 "price" => 2.50,
                 "thumbnail" => "https://www.example.com/images/coca-cola-classica.jpg",
                 "restaurant_id" => 1,
+
+                "cover_image" => "uploads/LXRgxW2hzUX22BH5CN6wnIbQ4Dc78N9m8XHYIs0E.jpg"
             ],
 
             [
@@ -84,6 +96,8 @@ class DishSeeder extends Seeder
                 "price" => 12.00,
                 "thumbnail" => "https://www.example.com/images/dragon-roll-fusion.jpg",
                 "restaurant_id" => 2,
+
+                "cover_image" => "uploads/Qh4sjVjvO5YwyVjPx09d8kXsdUI6zmxDoyudKCZq.jpg"
             ],
 
             // [
@@ -104,6 +118,8 @@ class DishSeeder extends Seeder
                 "price" => 49.00,
                 "thumbnail" => "https://www.example.com/images/bistecca-della-liberta.jpg",
                 "restaurant_id" => 3,
+
+                "cover_image" => "uploads/ICJ9KrQGBR6rlzLU5D9ICZ9BKky7ZWm5MINhh7DF.jpg"
             ],
 
             [
@@ -114,6 +130,8 @@ class DishSeeder extends Seeder
                 "price" => 8.00,
                 "thumbnail" => "https://www.example.com/images/slider-fusion.jpg",
                 "restaurant_id" => 4,
+
+                "cover_image" => "uploads/gCn65vkvtvupesrPmLN9SmschkhCTCK1w1QR8m0r.jpg"
             ],
 
             // [
@@ -134,6 +152,8 @@ class DishSeeder extends Seeder
                 "price" => 250.00,
                 "thumbnail" => "https://www.example.com/images/regale-piatto-doro.jpg",
                 "restaurant_id" => 5,
+
+                "cover_image" => "uploads/2YyF4YEMOtXXdaXPUlYnj2DoCDWkH3pc2NLMbc2d.jpg"
             ],
 
             [
@@ -144,6 +164,8 @@ class DishSeeder extends Seeder
                 "price" => 81.50,
                 "thumbnail" => "https://www.example.com/images/pizza-scintillante.jpg",
                 "restaurant_id" => 5,
+
+                "cover_image" => "uploads/pizza-oro.jpg"
             ],
 
             [
@@ -154,6 +176,8 @@ class DishSeeder extends Seeder
                 "price" => 150.00,
                 "thumbnail" => "https://www.example.com/images/risotto-dorato.jpg",
                 "restaurant_id" => 5,
+
+                "cover_image" => "uploads/risotto-oro.jpg"
             ],
 
             [
@@ -164,6 +188,8 @@ class DishSeeder extends Seeder
                 "price" => 29.01,
                 "thumbnail" => "https://www.example.com/images/gelato-pacchiano-fragola.jpg",
                 "restaurant_id" => 5,
+
+                "cover_image" => "uploads/gelato-oro.jpg"
             ],
 
             [
@@ -174,6 +200,8 @@ class DishSeeder extends Seeder
                 "price" => 9.00,
                 "thumbnail" => "https://www.example.com/images/wrap-fusion.jpg",
                 "restaurant_id" => 6,
+
+                "cover_image" => "uploads/4ey7b8Zs26skpC4SKqGSMNtebvAAHXyxhKX2nYT1.jpg"
             ],
 
             [
@@ -184,6 +212,8 @@ class DishSeeder extends Seeder
                 "price" => 12.00,
                 "thumbnail" => "https://www.example.com/images/pizza-kebab.jpg",
                 "restaurant_id" => 7,
+
+                "cover_image" => "uploads/6E801wBqGnbtiPYHtMechWbG9QrSxylusc1mOFDz.jpg"
             ],
 
             [
@@ -194,6 +224,8 @@ class DishSeeder extends Seeder
                 "price" => 10.00,
                 "thumbnail" => "https://www.example.com/images/buddha-bowl.jpg",
                 "restaurant_id" => 8,
+
+                "cover_image" => "uploads/JbeApX0xXxXVkQsouWBLh0xOqXHj6FkKfxLwtnC0.jpg"
             ],
         ];
 
@@ -208,6 +240,8 @@ class DishSeeder extends Seeder
             $newdish->thumbnail = $dish['thumbnail'];
 
             $newdish->restaurant_id = $dish['restaurant_id'];
+
+            $newdish->cover_image = $dish['cover_image'];
 
             $newdish->save();
         }
