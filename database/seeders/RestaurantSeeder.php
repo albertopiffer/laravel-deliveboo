@@ -48,7 +48,7 @@ class RestaurantSeeder extends Seeder
                 "description" => "Il Casteller di Trento è un luogo immaginario che evoca l'immagine di una prigione per orsi ingiustamente carcerati. Questo ristorante vuole diffondere un messaggio di libertà per gli orsi che sono stati privati della loro autonomia. Sperimenta un'esperienza culinaria unica, mentre ti immergi nell'atmosfera carceraria e rifletti sul valore della libertà per tutte le creature. Il nostro obiettivo è sensibilizzare e promuovere il rispetto degli animali. Unisciti a noi nella lotta per la libertà degli orsi incarcerati!",
                 "thumbnail" => "https://www.castellerditrento.com/wp-content/uploads/2023/06/Casteller-di-Trento-Logo.png",
                 "typologies_ids" => [4, 12],
-                "user_id" => 1,
+                "user_id" => 3,
             ],
             [
                 "restaurant_name" => "Street Bites",
