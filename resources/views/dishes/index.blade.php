@@ -6,9 +6,9 @@
                 <div class="col-lg-3 col-sm-6 col-12 mb-5">
                     <div class="card bg-white border border-secondary rounded border-3 d-flex">
                         @if ($dish->cover_image)
-                            <div class="container">
+                            <div class="container ratio ratio-1x1 object-fit-cover">
                                 <img src="{{ $dish->cover_path }}" alt=""
-                                    class="me-3 w-100 border-bottom border-danger border-3">
+                                    class="me-3 w-100 border-bottom border-secondary border-3">
                             </div>
                         @else
                             <img src="https://cdn-icons-png.flaticon.com/512/99/99260.png?w=1380&t=st=1684940767~exp=1684941367~hmac=cfe18c0c4335e6eeee2de726f896ca84348d5f2f926de78cb5681b9f3442198b"
@@ -46,10 +46,10 @@
 @endsection
 
 <style scoped>
-
-    a{
+    a {
         text-decoration: none !important;
     }
+
     .input-with-icon {
         position: relative;
         background-color: #dc3545;
@@ -65,24 +65,24 @@
         top: 5px;
     }
 
-    .dish-price{
+    .dish-price {
         font-weight: bold;
         color: black;
         font-size: 20px;
     }
 
-    .dish-tipology{
+    .dish-tipology {
         background-color: #FE715E;
     }
 
-    .edit-btn-dishes{
+    .edit-btn-dishes {
         border-color: #FE715E !important;
         color: #FE715E !important;
     }
 
-    .edit-btn-dishes:hover{
+    .edit-btn-dishes:hover {
         background-color: #FE715E !important;
         color: white !important;
-        
+
     }
 </style>

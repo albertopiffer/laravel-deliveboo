@@ -96,7 +96,7 @@
 
         .nav-pills:hover {
             color: white;
-            background-color: #FE715E;
+            background-color: #D3574A;
             border: 1px solid white;
         }
 
